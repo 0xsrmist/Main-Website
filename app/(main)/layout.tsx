@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/layouts/Navbar';
 import Footer from '@/layouts/Footer';
 import { TooltipProvider } from '@/components/ui/tooltip';
+import Notification from '@/components/resuable/Notification';
 
 export const metadata: Metadata = {
 	title: 'TPH x SRMIST',
@@ -15,12 +16,10 @@ export default function RootLayout({
 }) {
 	return (
 		<>
-			{/* @ts-ignore */}
 			<TooltipProvider>
-				{/* @ts-ignore */}
+				<Notification />
 				<Navbar />
 				{children}
-				{/* @ts-ignore */}
 				<Footer />
 			</TooltipProvider>
 		</>
