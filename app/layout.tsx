@@ -1,7 +1,7 @@
-import { Inter } from 'next/font/google';
+import { Archivo } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const archivo = Archivo({ subsets: ['latin'], display: 'swap' });
 
 export default function RootLayout({
 	children,
@@ -10,7 +10,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<body className={inter.className}>{children}</body>
+			<body className={`${archivo.className} bg-[#040507] text-white`}>
+				{children}
+			</body>
 		</html>
 	);
 }

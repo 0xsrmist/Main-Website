@@ -5,6 +5,8 @@ import About from '@/components/home/About';
 import Domains from '@/components/home/Domains';
 import Recruitment from '@/components/resuable/Recruitment';
 
+import './styles.css';
+
 const Home = () => {
 	return (
 		<main>
