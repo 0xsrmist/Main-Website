@@ -2,6 +2,14 @@
 	--star-primary: #ffffff;
 }
 
+#home__hero {
+	background-image: radial-gradient(
+		transparent 0%,
+		transparent 60%,
+		#040507 80%
+	);
+}
+
 #stars {
 	width: 1px;
 	height: 1px;
