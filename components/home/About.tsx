@@ -11,7 +11,7 @@ const About = () => {
 	];
 
 	return (
-		<section className='w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-20 mx-auto'>
+		<section className='w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-20 mx-auto p-4 md:p-16'>
 			<div className='h-fit md:sticky md:top-20'>
 				<Image
 					src='/assets/images/landing-about.svg'
