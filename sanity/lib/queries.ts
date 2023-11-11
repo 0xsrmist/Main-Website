@@ -31,3 +31,8 @@ export const teamMembersQuery = groq`*[_type == "team"]{
 export const domainsQuery = groq`*[_type == "domain"]{
   _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, description
 }`;
+
+// Get all partners
+export const partnersQuery = groq`*[_type == "partner"]{
+  _id, name, "image": image.asset->url, "alt": image.alt, description, website
+}`;

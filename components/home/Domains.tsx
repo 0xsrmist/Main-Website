@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Domains = () => {
+type DomainsProps = React.ComponentProps<'section'> & {
+	domains: Domain[];
+};
+
+const Domains: React.FC<DomainsProps> = ({ domains }) => {
 	return <div>Domains</div>;
 };
 

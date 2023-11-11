@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Partners = () => {
-	return <div>Partners</div>;
+type PartnersProps = React.ComponentProps<'section'> & {
+	partners: Partner[];
+};
+
+const Partners: React.FC<PartnersProps> = ({ partners }) => {
+	return <section>Partners</section>;
 };
 
 export default Partners;

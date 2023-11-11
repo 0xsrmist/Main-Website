@@ -56,3 +56,12 @@ type BlogPost = Readonly<{
 	publishedAt: Date;
 	body?: TypedObject | TypedObject[];
 }>;
+
+type Partner = Readonly<{
+	_id: string;
+	name: string;
+	description: string;
+	website: string;
+	image: string;
+	alt: string;
+}>;
