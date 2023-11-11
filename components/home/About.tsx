@@ -1,5 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+
 const About = () => {
 	const content = [
 		'Welcome to TPHxSRMIST, the forefront of innovation and exploration in the world of technology. We are The Product House SRMIST Web3 Chapter, a vibrant community dedicated to delving into the realms of Web3 technologies and blockchain innovations.',
@@ -30,6 +33,12 @@ const About = () => {
 						{text}
 					</p>
 				))}
+				<Button
+					asChild
+					className='bg-app-primary hover:bg-app-primary/80 transition-all duration-300 mt-8 w-full'
+				>
+					<Link href={'/about'}>Learn more</Link>
+				</Button>
 			</div>
 		</section>
 	);
