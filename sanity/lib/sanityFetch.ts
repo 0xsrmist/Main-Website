@@ -1,6 +1,6 @@
 import 'server-only';
 
-import type { FilteredResponseQueryOptions, QueryParams } from '@sanity/client';
+import type { FilteredResponseQueryOptions, QueryParams } from 'next-sanity';
 import { draftMode } from 'next/headers';
 import { client } from '@/sanity/lib/client';
 

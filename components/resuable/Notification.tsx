@@ -1,7 +1,13 @@
 import React from 'react';
 
-const Notification = () => {
-	return <div>Notification</div>;
+type NotificationInfoProps = React.ComponentProps<'section'> & {
+	notifications: Notification[];
 };
 
-export default Notification;
+const NotificationInfo: React.FC<NotificationInfoProps> = ({
+	notifications,
+}) => {
+	return <div>NotificationInfo</div>;
+};
+
+export default NotificationInfo;
