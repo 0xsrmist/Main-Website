@@ -65,3 +65,12 @@ type Partner = Readonly<{
 	image: string;
 	alt: string;
 }>;
+
+type Notification = Readonly<{
+	_id: string;
+	title: string;
+	description: string;
+	url: string;
+	startDate: Date;
+	endDate: Date;
+}>;

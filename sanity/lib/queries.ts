@@ -36,3 +36,8 @@ export const domainsQuery = groq`*[_type == "domain"]{
 export const partnersQuery = groq`*[_type == "partner"]{
   _id, name, "image": image.asset->url, "alt": image.alt, description, website
 }`;
+
+// Get all active notifications
+export const activeNotificationsQuery = groq`*[_type == "notification" && now() >= startDate && now() <= endEnd]{
+  _id, title, description, website, startDate, endDate
+}`;
