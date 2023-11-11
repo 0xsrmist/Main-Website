@@ -26,6 +26,16 @@ export default defineType({
 			type: 'blockContent',
 		}),
 		defineField({
+			name: 'eventType',
+			title: 'Event Type',
+			description: 'Select the type of the event.',
+			type: 'string',
+			options: {
+				list: ['recruitment', 'conference', 'hackathon', 'meetup'],
+			},
+			validation: (Rule) => Rule.required(),
+		}),
+		defineField({
 			name: 'mode',
 			title: 'Event Mode',
 			description: 'Select the mode of the event: online or offline.',
@@ -130,7 +140,7 @@ export default defineType({
 							name: 'role',
 							title: 'Speaker Role',
 							type: 'string',
-                            validation: (Rule) => Rule.required(),
+							validation: (Rule) => Rule.required(),
 						},
 						{
 							name: 'url',
@@ -173,7 +183,7 @@ export default defineType({
 							name: 'caption',
 							title: 'Caption',
 							type: 'string',
-                            validation: (Rule) => Rule.required(),
+							validation: (Rule) => Rule.required(),
 						},
 					],
 				},

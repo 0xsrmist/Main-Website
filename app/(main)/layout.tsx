@@ -17,15 +17,19 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const notifications = await sanityFetch<Notification[]>({
+	const notifications = await sanityFetch<NotificationData[]>({
 		query: activeNotificationsQuery,
 	});
 
 	return (
 		<>
 			<TooltipProvider>
-				<NotificationInfo notifications={notifications} />
-				<Navbar />
+				<nav className='fixed top-0 bg-transparent w-full z-50'>
+					{notifications.length > 0 ? (
+						<NotificationInfo notifications={notifications} />
+					) : null}
+					<Navbar />
+				</nav>
 				{children}
 				<Footer />
 			</TooltipProvider>

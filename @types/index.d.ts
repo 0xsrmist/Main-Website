@@ -66,7 +66,7 @@ type Partner = Readonly<{
 	alt: string;
 }>;
 
-type Notification = Readonly<{
+type NotificationData = Readonly<{
 	_id: string;
 	title: string;
 	description: string;

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Hero = () => {
 	return (
-		<section className='min-h-screen relative w-full flex items-start justify-center overflow-hidden z-10'>
+		<section className='min-h-screen relative w-full flex items-center justify-center overflow-hidden z-10'>
 			<div
 				className='absolute w-full h-full top-0 left-0 z-[5]'
 				// id='home__hero'
@@ -21,7 +21,6 @@ const Hero = () => {
 						className='w-full h-auto object-cover aspect-[9/16] md:aspect-auto xl:-translate-y-60'
 						priority
 						unoptimized
-						// sizes='(max-width: 640px) 100vw, (max-width: 1440px) 100vw, 2560px'
 					/>
 				</div>
 			</div>

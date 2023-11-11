@@ -76,6 +76,9 @@ module.exports = {
 					'100%': { transform: 'rotate(360deg)' },
 				},
 			},
+			backgroundImage: {
+				linearback: 'linear-gradient(90deg, #16EE97 0%, #AA66FE 100%)',
+			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',

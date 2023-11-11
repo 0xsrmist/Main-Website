@@ -38,6 +38,6 @@ export const partnersQuery = groq`*[_type == "partner"]{
 }`;
 
 // Get all active notifications
-export const activeNotificationsQuery = groq`*[_type == "notification" && now() >= startDate && now() <= endEnd]{
-  _id, title, description, website, startDate, endDate
+export const activeNotificationsQuery = groq`*[_type == "notification" && startDate <= now() && endDate >= now()]{
+  _id, title, description, url, startDate, endDate
 }`;
