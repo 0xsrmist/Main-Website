@@ -33,5 +33,13 @@ export default defineType({
 			},
 			validation: (Rule) => Rule.required(),
 		}),
+		defineField({
+			name: 'order',
+			title: 'Priorit Order',
+			description:
+				'A numerical value representing the priority or order of this role. Lower values indicate higher priority. Use this field to customize the order in which roles are displayed or sorted.',
+			type: 'number',
+			validation: (Rule) => Rule.required(),
+		}),
 	],
 });

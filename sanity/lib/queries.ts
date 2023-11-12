@@ -24,7 +24,7 @@ export const eventQeury = groq`*[_type == "event" && slug.current == $slug][0]{
 
 // Get a single team member by its lug
 export const teamMemberQuery = groq`*[_type == "team" && slug.current == $slug][0]{
-  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, role->, instagram, twitter, linkedin, website, email, youtube, qualifications, domain->
+  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, instagram, twitter, linkedin, website, email, youtube, qualifications, "domain": domain->{name, description, "slug": slug.current, "image": image.asset->url, "alt": image.alt}, "role": role->{name, "slug": slug.current, description}
 }`;
 
 // Get all post slugs
@@ -44,8 +44,8 @@ export const teamMemberPathsQuery = groq`*[_type == "team" && defined(slug.curre
 
 // Get all team members
 export const teamMembersQuery = groq`*[_type == "team"]{
-  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, role->, instagram, twitter, linkedin, website, email, youtube, qualifications, domain->
-}`;
+  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, instagram, twitter, linkedin, website, email, youtube, qualifications, "domain": domain->{name, description, "slug": slug.current}, "role": role->{name, "slug": slug.current, description}
+} | order(role->order asc)`;
 
 // Get all domains
 export const domainsQuery = groq`*[_type == "domain"]{
