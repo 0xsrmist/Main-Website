@@ -21,8 +21,6 @@ const Home = async () => {
 		query: latestRecruitmentEventQuery,
 	});
 
-	console.log(recruitment);
-
 	return (
 		<main>
 			<Hero />

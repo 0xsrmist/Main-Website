@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'About | TPH x SRMIST',
+	title: 'Events | TPH x SRMIST',
 	description: '',
 };
 

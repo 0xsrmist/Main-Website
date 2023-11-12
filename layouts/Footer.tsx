@@ -13,7 +13,7 @@ import { FOOTER_NAVIGATION } from '@/constants/navigation';
 
 const Footer = () => {
 	return (
-		<footer className='border-t border-t-white p-4 md:p-16'>
+		<footer className='border-t border-t-white p-4 md:p-16 mt-8'>
 			<section className='max-w-7xl mx-auto w-full flex md:justify-between flex-col md:flex-row gap-8 items-center md:items-start justify-center'>
 				<div>
 					<Link href={'/'} className='block w-60'>

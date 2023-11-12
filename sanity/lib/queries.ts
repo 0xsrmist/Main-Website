@@ -17,14 +17,34 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
   _id, "slug": slug.current, title, "image": mainImage.asset->url, "alt": mainImage.alt, body, author->{"image": image.asset->url, "alt": image.alt, name, "slug": slug.current}, categories[]->{title, "slug": slug.current}, publishedAt, description
 }`;
 
+// Get a single event by its slug
+export const eventQeury = groq`*[_type == "event" && slug.current == $slug][0]{
+  _id, "slug": slug.current, title, about, description, eventType, description, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, "imageGallery": imageGallery[]{"image": image.asset->url, "alt": image.alt, caption }, "speakers": speakers[]{name, role, "image": image.asset->url, "alt": image.alt, url}
+}`;
+
+// Get a single team member by its lug
+export const teamMemberQuery = groq`*[_type == "team" && slug.current == $slug][0]{
+  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, role->, instagram, twitter, linkedin, website, email, youtube, qualifications, domain->
+}`;
+
 // Get all post slugs
 export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
   "params": { "slug": slug.current }
 }`;
 
+// Get all event slugs
+export const eventPathsQuery = groq`*[_type == "event" && defined(slug.current)][]{
+  "params": { "slug": slug.current }
+}`;
+
+// Get all team member slugs
+export const teamMemberPathsQuery = groq`*[_type == "team" && defined(slug.current)][]{
+  "params": { "slug": slug.current }
+}`;
+
 // Get all team members
 export const teamMembersQuery = groq`*[_type == "team"]{
-  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, role, instagram, twitter, linkedin, website, email, youtube, qualifications
+  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, role->, instagram, twitter, linkedin, website, email, youtube, qualifications, domain->
 }`;
 
 // Get all domains
@@ -46,3 +66,13 @@ export const activeNotificationsQuery = groq`*[_type == "notification" && startD
 export const latestRecruitmentEventQuery = groq`*[_type == "event" && eventType == "recruitment" && startDate <= now() && endDate >= now()]{
   _id, "slug": slug.current, title, about, description, eventType, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt
 } | order(startDate asc) [0]`;
+
+// Get all events
+export const eventsQuery = groq`*[_type == "event"]{
+  _id, "slug": slug.current, title, about, description, eventType, description, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt
+} | order(endDate desc)`;
+
+// Get all latest events
+export const latestEventsQuery = groq`*[_type == "event"]{
+  _id, "slug": slug.current, title, about, description, eventType, description, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt
+} | order(endDate desc) [0..2]`;
