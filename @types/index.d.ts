@@ -104,3 +104,12 @@ type EventData = Readonly<{
 		alt: string;
 	}>;
 }>;
+
+type LegalDataBase = Readonly<{
+	title: string;
+	descriptions: Array<string>;
+}>;
+
+type TermsAndConditionsData = ReadonlyArray<LegalDataBase>;
+
+type PrivacyPolicyData = ReadonlyArray<LegalDataBase>;
