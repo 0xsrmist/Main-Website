@@ -83,10 +83,10 @@ type EventData = Readonly<{
 	description?: TypedObject | TypedObject[];
 	eventType: 'recrruitment' | 'conference' | 'hackathon' | 'meetup';
 	mode: 'online' | 'offline';
-	url?: string;
+	url: string;
 	startDate: Date;
 	endDate: Date;
-	registrationUrl: url;
+	location?: url;
 	coverImage: string;
 	coverImageAlt: string;
 	speakers?: Array<{
