@@ -87,7 +87,7 @@ const Footer = () => {
 					</div>
 				</div>
 			</section>
-			<hr className='border-b border-b-white/40 mx-auto max-w-sm rounded-xl my-8' />
+			<hr className='border-b border-b-slate-300/10 mx-auto max-w-7xl rounded-xl my-8' />
 			<section className='max-w-7xl mx-auto w-full text-center'>
 				<p className=''>
 					Copyright &copy; 2023 TPH x SRMIST. Built with ❤️. Open
