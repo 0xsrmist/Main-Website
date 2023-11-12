@@ -74,3 +74,29 @@ type NotificationData = Readonly<{
 	startDate: Date;
 	endDate: Date;
 }>;
+
+type EventData = Readonly<{
+	_id: string;
+	title: string;
+	slug: string;
+	about: string;
+	description?: TypedObject | TypedObject[];
+	eventType: 'recrruitment' | 'conference' | 'hackathon' | 'meetup';
+	mode: 'online' | 'offline';
+	url: string;
+	startDate: Date;
+	endDate: Date;
+	location?: url;
+	coverImage: string;
+	coverImageAlt: string;
+	speakers?: Array<{
+		name: string;
+		image: string;
+		alt: string;
+	}>;
+	imageGallery?: Array<{
+		caption: string;
+		image: string;
+		alt: string;
+	}>;
+}>;
