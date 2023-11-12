@@ -40,7 +40,7 @@ const SheetNav = () => {
 					<SheetDescription className='flex flex-col items-center justify-center'>
 						<ul className='flex items-center gap-8 flex-wrap justify-center'>
 							{NAVBAR_NAVIGATION.map((item) => (
-								<li key={`navbar-nav-${item.url}`}>
+								<li key={`sheet-nav-${item.url}`}>
 									<Link
 										href={item.url}
 										target={item.target}
