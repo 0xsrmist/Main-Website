@@ -8,15 +8,18 @@ import Recruitment from '@/components/resuable/Recruitment';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import {
 	domainsQuery,
+	latestEventsQuery,
 	latestRecruitmentEventQuery,
 	partnersQuery,
 } from '@/sanity/lib/queries';
 
 import './styles.css';
+import Events from '@/components/home/Events';
 
 const Home = async () => {
 	const domains = await sanityFetch<Domain[]>({ query: domainsQuery });
 	const partners = await sanityFetch<Partner[]>({ query: partnersQuery });
+	const events = await sanityFetch<EventData[]>({ query: latestEventsQuery });
 	const recruitment = await sanityFetch<EventData>({
 		query: latestRecruitmentEventQuery,
 	});
@@ -27,6 +30,7 @@ const Home = async () => {
 			<Partners partners={partners} />
 			<About />
 			<Domains domains={domains} />
+			{events.length > 0 ? <Events events={events} /> : null}
 			{recruitment ? <Recruitment recruitment={recruitment} /> : null}
 		</main>
 	);

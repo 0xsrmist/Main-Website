@@ -89,6 +89,8 @@ type EventData = Readonly<{
 	location?: url;
 	coverImage: string;
 	coverImageAlt: string;
+	status: 'ongoing' | 'completed' | 'upcoming';
+	address?: string;
 	speakers?: Array<{
 		name: string;
 		image: string;
