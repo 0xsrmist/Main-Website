@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { NAVBAR_NAVIGATION } from '@/constants/navigation';
 import { Button } from '@/components/ui/button';
+import SheetNav from './SheetNav';
 
 const Navbar = () => {
 	const [header, setHeader] = useState('bg-transparent');
@@ -55,6 +56,7 @@ const Navbar = () => {
 						</Button>
 					</li>
 				</ul>
+				<SheetNav />
 			</div>
 		</header>
 	);
