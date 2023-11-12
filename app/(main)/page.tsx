@@ -6,13 +6,22 @@ import Domains from '@/components/home/Domains';
 import Recruitment from '@/components/resuable/Recruitment';
 
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
-import { domainsQuery, partnersQuery } from '@/sanity/lib/queries';
+import {
+	domainsQuery,
+	latestRecruitmentEventQuery,
+	partnersQuery,
+} from '@/sanity/lib/queries';
 
 import './styles.css';
 
 const Home = async () => {
 	const domains = await sanityFetch<Domain[]>({ query: domainsQuery });
 	const partners = await sanityFetch<Partner[]>({ query: partnersQuery });
+	const recruitment = await sanityFetch<EventData>({
+		query: latestRecruitmentEventQuery,
+	});
+
+	console.log(recruitment);
 
 	return (
 		<main>
@@ -20,7 +29,7 @@ const Home = async () => {
 			<Partners partners={partners} />
 			<About />
 			<Domains domains={domains} />
-			<Recruitment />
+			{recruitment ? <Recruitment recruitment={recruitment} /> : null}
 		</main>
 	);
 };

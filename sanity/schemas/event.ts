@@ -13,10 +13,23 @@ export default defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			description:
+				"This is the user-friendly part of the URL for your post. It's derived from the title but can be customized. Slugs make it easier for users to access your post directly.",
+			validation: (Rule) => Rule.required(),
+			options: {
+				source: 'title',
+				maxLength: 96,
+			},
+		}),
+		defineField({
 			name: 'about',
 			title: 'About',
 			description: 'A short information or catchphrase about the event.',
 			type: 'string',
+			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'description',
@@ -28,7 +41,8 @@ export default defineType({
 		defineField({
 			name: 'eventType',
 			title: 'Event Type',
-			description: 'Select the type of the event.',
+			description:
+				'Select the type of the event. To add more types, contact the tech team.',
 			type: 'string',
 			options: {
 				list: ['recruitment', 'conference', 'hackathon', 'meetup'],
@@ -51,7 +65,6 @@ export default defineType({
 			description:
 				'The URL or virtual location of the event, or the google map address link. Provide the meet link for online events.',
 			type: 'url',
-			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'address',
@@ -80,6 +93,7 @@ export default defineType({
 			description:
 				'The URL where participants can register for the event. Provide the link for registration.',
 			type: 'url',
+			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'coverImage',

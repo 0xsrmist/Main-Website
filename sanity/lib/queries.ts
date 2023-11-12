@@ -41,3 +41,8 @@ export const partnersQuery = groq`*[_type == "partner"]{
 export const activeNotificationsQuery = groq`*[_type == "notification" && startDate <= now() && endDate >= now()]{
   _id, title, description, url, startDate, endDate
 }`;
+
+// Get latest recruitment event
+export const latestRecruitmentEventQuery = groq`*[_type == "event" && eventType == "recruitment" && startDate <= now() && endDate >= now()]{
+  _id, "slug": slug.current, title, about, description, eventType, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt
+} | order(startDate asc) [0]`;
