@@ -109,7 +109,7 @@ const TeamMember = async ({ params }: Props) => {
 	return (
 		<main className='w-full p-4 md:p-16 relative overflow-hidden min-h-screen'>
 			<div className='max-w-7xl mx-auto mt-16 gap-8 flex items-center jusitfy-center flex-col'>
-				<section className='max-w-[12rem] md:max-w-xs rounded-full overflow-hidden'>
+				<section className='max-w-[12rem] md:max-w-xs rounded-2xl overflow-hidden'>
 					<Image
 						src={member.image}
 						width={100}
@@ -163,7 +163,7 @@ const TeamMember = async ({ params }: Props) => {
 					) : null}
 				</section>
 			</div>
-			<div className='absolute -left-8 md:left-0 top-0 max-w-[12rem] md:max-w-sm'>
+			<div className='absolute w-full -left-8 md:left-0 top-0 max-w-[12rem] md:max-w-sm'>
 				<Image
 					src='/assets/images/looper.png'
 					width={100}
@@ -173,7 +173,7 @@ const TeamMember = async ({ params }: Props) => {
 					unoptimized
 				/>
 			</div>
-			<div className='absolute top-8 -right-20 md:-right-32 max-w-[8rem] md:max-w-sm animate-float'>
+			<div className='absolute top-8 w-full -right-20 md:-right-32 max-w-[8rem] md:max-w-sm animate-float'>
 				<Image
 					src='/assets/images/planet.png'
 					width={100}
