@@ -123,7 +123,7 @@ const TeamMember = async ({ params }: Props) => {
 					<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
 						{member.name}
 					</h1>
-					{member.role.name !== 'co-founder' ? (
+					{member.role.name !== 'Co-founder' ? (
 						<h2 className='text-base md:text-lg lg:text-xl'>
 							{member.role.name} at {member.domain.name} domain
 						</h2>
@@ -132,7 +132,7 @@ const TeamMember = async ({ params }: Props) => {
 							{member.role.name}
 						</h2>
 					)}
-					<h3 className='text-base md:text-lg'>
+					<h3 className='text-base md:text-lg max-w-4xl mx-auto'>
 						{member?.bio || null}
 					</h3>
 					<ul className='mt-8 max-w-4xl w-full mx-auto flex flex-col gap-4'>
