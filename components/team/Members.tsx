@@ -23,7 +23,7 @@ const Members: React.FC<MembersProps> = ({ members }) => {
 		});
 	});
 	return (
-		<section className='w-full mt-12 max-w-7xl mx-auto text-center'>
+		<section className='w-full mt-4 md:mt-12 max-w-7xl mx-auto text-center'>
 			<section className='mt-16'>
 				<h2 className='uppercase text-base md:text-lg lg:text-xl font-medium'>
 					Club <span className='text-app-primary'>founders</span>

@@ -9,7 +9,7 @@ const Team = async () => {
 		query: teamMembersQuery,
 	});
 	return (
-		<main className='w-full p-4 md:p-16'>
+		<main className='w-full p-4 md:p-16 overflow-hidden'>
 			<Hero />
 			<Members members={teamMembers} />
 		</main>
