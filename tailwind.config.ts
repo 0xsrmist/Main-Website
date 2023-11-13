@@ -75,6 +75,10 @@ module.exports = {
 					'0%': { transform: 'rotate(0deg)' },
 					'100%': { transform: 'rotate(360deg)' },
 				},
+				floating: {
+					'0%, 100%': { transform: 'translate(0,  0px)' },
+					'50%': { transform: 'translate(0, 16px)' },
+				},
 			},
 			backgroundImage: {
 				linearback: 'linear-gradient(90deg, #16EE97 0%, #AA66FE 100%)',
@@ -83,6 +87,7 @@ module.exports = {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				rotate: 'rotate 8s linear infinite',
+				float: 'floating 3s ease-in-out infinite',
 			},
 		},
 	},
