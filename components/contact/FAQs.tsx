@@ -12,7 +12,10 @@ type FAQsProps = React.ComponentProps<'section'> & {
 
 const FAQs: React.FC<FAQsProps> = ({ faqs }) => {
 	return (
-		<section className='mt-20 flex items-center justify-center flex-col'>
+		<section
+			className='mt-20 flex items-center justify-center flex-col'
+			id='faqs'
+		>
 			<h2 className='capitalize text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
 				Frequently Asked questions
 			</h2>

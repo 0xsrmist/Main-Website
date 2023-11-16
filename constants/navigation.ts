@@ -36,6 +36,11 @@ export const NAVBAR_NAVIGATION: NavdataCollection = [...COMMON_NAVIGATION];
 export const FOOTER_NAVIGATION: NavdataCollection = [
 	...COMMON_NAVIGATION,
 	{
+		name: 'FAQs',
+		url: '/contact#faqs',
+		target: '_self',
+	},
+	{
 		name: 'Terms & Conditions',
 		url: '/terms',
 		target: '_self',
