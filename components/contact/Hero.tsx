@@ -4,7 +4,7 @@ import Form from './Form';
 
 const Hero = () => {
 	return (
-		<section className='w-full min-h-screen relative bg-[url(/assets/images/circles.svg)] z-20 bg-no-repeat bg-center bg-cover grid grid-cols-1 md:grid-cols-2 gap-8 mt-12'>
+		<section className='w-full min-h-screen relative bg-[url(/assets/images/circles.svg)] z-20 bg-no-repeat bg-center bg-cover place-items-center grid grid-cols-1 md:grid-cols-2 gap-8 mt-12'>
 			<section className='z-20'>
 				<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold max-w-[20ch] mt-4'>
 					Connect with the coolest{' '}
