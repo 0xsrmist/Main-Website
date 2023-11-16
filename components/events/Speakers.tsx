@@ -32,7 +32,7 @@ const Speakers: React.FC<SpeakersProps> = ({ speakers }) => {
 									unoptimized
 								/>
 							</div>
-							<h4 className='capitalize text-sm md:text-base lg:text-lg font-medium mt-2'>
+							<h4 className='capitalize text-sm md:text-base font-medium mt-auto'>
 								{speaker.name}
 							</h4>
 							<p className='text-xs md:text-sm capitalize bg-white text-app-primary border border-slate-300 px-2 py-1 rounded-xl mt-1'>
