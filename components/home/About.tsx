@@ -36,7 +36,7 @@ const About = () => {
 				))}
 				<Button
 					asChild
-					className='bg-app-primary hover:bg-app-primary/80 transition-all duration-300 mt-8 w-full'
+					className='bg-app-primary hover:bg-app-primary/80 transition-all duration-300 mt-8 w-full rounded-2xl'
 				>
 					<Link href={'/about'}>Learn more</Link>
 				</Button>
