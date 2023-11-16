@@ -7,7 +7,11 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import z from 'zod';
 
-const RECEIVER_EMAILS = [process.env.GMAIL_EMAIL, 'zeeshan8281@gmail.com'];
+const RECEIVER_EMAILS = [
+	process.env.GMAIL_EMAIL,
+	'zeeshan8281@gmail.com',
+	'sign.ankit14@gmail.com',
+];
 
 const contactFormRequestSchema = z.object({
 	name: z.string(),
