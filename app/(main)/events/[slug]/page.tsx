@@ -44,7 +44,6 @@ export async function generateMetadata(
 
 const Event = async ({ params }: Props) => {
 	const event = await client.fetch<EventData>(eventQeury, params);
-	console.log(event);
 	if (!event) {
 		redirect('/events');
 	}
