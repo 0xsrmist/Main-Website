@@ -76,3 +76,8 @@ export const eventsQuery = groq`*[_type == "event" && eventType != "recruitment"
 export const latestEventsQuery = groq`*[_type == "event" && eventType != "recruitment"]{
   _id, "slug": slug.current, title, about, description, eventType, description, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, (startDate <= now() && endDate >= now()) => {"status": "ongoing"}, (startDate >= now() && endDate >= now()) => {"status": "upcoming"}, (startDate <= now() && endDate <= now()) => {"status": "completed"}
 } | order(endDate desc) [0..2]`;
+
+// Get all FAQs
+export const faqsQuery = groq`*[_type == "faq"]{
+  _id, question, answer, order
+} | order(order asc)`;

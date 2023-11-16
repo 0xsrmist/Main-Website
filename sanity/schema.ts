@@ -9,6 +9,7 @@ import clubRole from './schemas/clubRole';
 import partner from './schemas/partner';
 import notification from './schemas/notification';
 import event from './schemas/event';
+import faq from './schemas/faq';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -21,5 +22,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		partner,
 		notification,
 		event,
+		faq,
 	],
 };

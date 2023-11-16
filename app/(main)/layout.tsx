@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navbar from '@/layouts/Navbar';
 import Footer from '@/layouts/Footer';
+import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import NotificationInfo from '@/components/resuable/Notification';
 
@@ -33,6 +34,7 @@ export default async function RootLayout({
 				{children}
 				<Footer />
 			</TooltipProvider>
+			<Toaster />
 		</>
 	);
 }

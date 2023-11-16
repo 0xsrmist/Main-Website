@@ -113,3 +113,10 @@ type LegalDataBase = Readonly<{
 type TermsAndConditionsData = ReadonlyArray<LegalDataBase>;
 
 type PrivacyPolicyData = ReadonlyArray<LegalDataBase>;
+
+type FAQData = Readonly<{
+	_id: string;
+	question: string;
+	answer: string;
+	order: number;
+}>;
