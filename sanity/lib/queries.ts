@@ -79,5 +79,5 @@ export const latestEventsQuery = groq`*[_type == "event" && eventType != "recrui
 
 // Get all FAQs
 export const faqsQuery = groq`*[_type == "faq"]{
-  _id, question, answer
-}`;
+  _id, question, answer, order
+} | order(order asc)`;

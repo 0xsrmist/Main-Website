@@ -47,8 +47,8 @@ export default defineType({
 		prepare(selection) {
 			const { question, order } = selection;
 			return {
-				title: `${order ? `${order}.` : null} ${
-					question ? question : null
+				title: `${order ? `${order}.` : ''} ${
+					question ? question : 'Question to be added'
 				}`,
 			};
 		},
