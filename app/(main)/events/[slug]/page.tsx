@@ -1,8 +1,13 @@
 import React from 'react';
-import { client } from '@/sanity/lib/client';
-import { eventPathsQuery, eventQeury } from '@/sanity/lib/queries';
+import Image from 'next/image';
 import { Metadata, ResolvingMetadata } from 'next';
 import { redirect } from 'next/navigation';
+import Speakers from '@/components/events/Speakers';
+import Header from '@/components/events/Header';
+import Location from '@/components/events/Location';
+import RegisterButton from '@/components/events/RegisterButton';
+import { client } from '@/sanity/lib/client';
+import { eventPathsQuery, eventQeury } from '@/sanity/lib/queries';
 
 type Props = {
 	params: { slug: string };
@@ -43,7 +48,33 @@ const Event = async ({ params }: Props) => {
 	if (!event) {
 		redirect('/events');
 	}
-	return <main>Event</main>;
+	return (
+		<main className='w-full'>
+			<div className='w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 mt-20 md:mt-12 p-4 md:p-16'>
+				<section className='h-fit md:sticky md:top-32'>
+					<div className='w-full overflow-hidden rounded-2xl'>
+						<Image
+							src={event.coverImage}
+							width={100}
+							height={100}
+							alt={event.coverImageAlt}
+							className='w-full h-auto object-contain'
+							unoptimized
+						/>
+					</div>
+					<RegisterButton url={event.url} />
+				</section>
+				<section>
+					<Header event={event} />
+					<RegisterButton url={event.url} />
+					<Location event={event} />
+					{event.speakers && event.speakers.length > 0 ? (
+						<Speakers speakers={event.speakers} />
+					) : null}
+				</section>
+			</div>
+		</main>
+	);
 };
 
 export default Event;
