@@ -8,9 +8,10 @@ type RecruitmentProps = React.ComponentProps<'section'> & {
 };
 
 const dateFormatter = (date: Date) =>
-	new Intl.DateTimeFormat('en-IN', { dateStyle: 'short' }).format(
-		new Date(date)
-	);
+	new Intl.DateTimeFormat('en-IN', {
+		dateStyle: 'short',
+		timeZone: 'Asia/Kolkata',
+	}).format(new Date(date));
 
 const Recruitment: React.FC<RecruitmentProps> = ({ recruitment }) => {
 	return (

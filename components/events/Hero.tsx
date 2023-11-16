@@ -45,13 +45,13 @@ const Hero = () => {
 					/>
 				</section>
 			</div>
-			<div className='absolute top-1/3 md:-top-10 max-w-sm md:max-w-lg -z-10 -right-20 animate-float2'>
+			<div className='absolute top-1/3 md:-top-10 max-w-sm md:max-w-lg -z-10 -right-20 animate-float2 w-full'>
 				<Image
 					src='/assets/images/planet.png'
 					width={100}
 					height={100}
+					className='w-full h-auto object-cover'
 					alt=''
-					className='w-full h-auto object-contain'
 					unoptimized
 				/>
 			</div>

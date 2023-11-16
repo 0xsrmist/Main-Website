@@ -19,7 +19,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
 
 // Get a single event by its slug
 export const eventQeury = groq`*[_type == "event" && slug.current == $slug][0]{
-  _id, "slug": slug.current, title, about, description, eventType, description, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, "imageGallery": imageGallery[]{"image": image.asset->url, "alt": image.alt, caption }, "speakers": speakers[]{name, role, "image": image.asset->url, "alt": image.alt, url}, "ongoing": startDate <= now() && endDate >= now()
+  _id, "slug": slug.current, title, about, description, eventType, description, mode, location, address, startDate, endDate, url, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, "imageGallery": imageGallery[]{"image": image.asset->url, "alt": image.alt, caption }, "speakers": speakers[]{name, role, "image": image.asset->url, "alt": image.alt, url}, (startDate <= now() && endDate >= now()) => {"status": "ongoing"}, (startDate >= now() && endDate >= now()) => {"status": "upcoming"}, (startDate <= now() && endDate <= now()) => {"status": "completed"}
 }`;
 
 // Get a single team member by its lug
