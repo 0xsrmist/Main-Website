@@ -7,6 +7,8 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import z from 'zod';
 
+const RECEIVER_EMAILS = [process.env.GMAIL_EMAIL, 'zeeshan8281@gmail.com'];
+
 const contactFormRequestSchema = z.object({
 	name: z.string(),
 	email: z.string().email(),
@@ -33,7 +35,7 @@ export async function POST(request: Request) {
 	if (status === 'valid') {
 		await transporter.sendMail({
 			from: process.env.GMAIL_EMAIL,
-			to: 'kunalkeshan12@gmail.com',
+			to: RECEIVER_EMAILS.join(', '),
 			subject: `${value.name} - ${value.email} is interested in ${value.service}`,
 			text: `${value.message}\nEmail: ${value.email}\nName:${value.name}\nPhone:${value.phone}\n\nThis message is sent from the websites contact form`,
 		});
