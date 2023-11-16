@@ -18,5 +18,39 @@ export default defineType({
 			description:
 				'The detailed answer to the frequently asked question.',
 		}),
+		defineField({
+			name: 'order',
+			title: 'Priority Order',
+			description:
+				'A numerical value representing the priority or order of this Q/A. Lower values indicate higher priority. Use this field to customize the order in which Q/A are displayed or sorted.',
+			type: 'number',
+			validation: (Rule) => Rule.required(),
+		}),
 	],
+	orderings: [
+		{
+			title: 'Priority Order, Asc',
+			name: 'orderAsc',
+			by: [{ field: 'order', direction: 'asc' }],
+		},
+		{
+			title: 'Priority Order, Desc',
+			name: 'orderDesc',
+			by: [{ field: 'order', direction: 'desc' }],
+		},
+	],
+	preview: {
+		select: {
+			question: 'question',
+			order: 'order',
+		},
+		prepare(selection) {
+			const { question, order } = selection;
+			return {
+				title: `${order ? `${order}.` : null} ${
+					question ? question : null
+				}`,
+			};
+		},
+	},
 });
