@@ -191,6 +191,7 @@ const ContactForm = () => {
 												type='text'
 												required
 												{...field}
+												className='text-black'
 											/>
 										</FormControl>
 										<FormMessage />
@@ -210,6 +211,7 @@ const ContactForm = () => {
 												type='email'
 												required
 												{...field}
+												className='text-black'
 											/>
 										</FormControl>
 										<FormMessage />
@@ -228,6 +230,7 @@ const ContactForm = () => {
 												placeholder='9876543210'
 												type='tel'
 												{...field}
+												className='text-black'
 											/>
 										</FormControl>
 										<FormDescription>
