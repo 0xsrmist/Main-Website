@@ -15,7 +15,12 @@ type EventInfoProps = React.ComponentProps<'li'> & {
 	event: EventData;
 };
 
+const MAX_ABOUT_LENGTH = 100;
+
 const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
+	const about =
+		event.about.slice(0, MAX_ABOUT_LENGTH) +
+		(event.about.length > MAX_ABOUT_LENGTH ? '...' : '');
 	return (
 		<li className='w-full overflow-hidden rounded-lg group z-20 block'>
 			<div className='relative'>
@@ -41,7 +46,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 				<h3 className='text-base md:text-lg lg:text-xl mt-2 font-medium'>
 					{event.title}
 				</h3>
-				<p className='text-justify'>{event.about}</p>
+				<p className='text-justify'>{about}</p>
 				<div className='flex gap-2 text-left mt-4 w-full'>
 					<Calendar size={20} strokeWidth={1.5} />
 					<p>
