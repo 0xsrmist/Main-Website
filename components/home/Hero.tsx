@@ -34,7 +34,7 @@ const Hero = () => {
 						className='w-full h-auto object-cover'
 					/>
 				</div>
-				<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold max-w-[20ch] mt-4'>
+				<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold max-w-[20ch] mt-4'>
 					The blockchain community built for students
 				</h1>
 				<h2 className='text-base md:text-lg lg:text-xl max-w-[32ch] mt-2'>
