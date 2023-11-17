@@ -22,7 +22,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 		event.about.slice(0, MAX_ABOUT_LENGTH) +
 		(event.about.length > MAX_ABOUT_LENGTH ? '...' : '');
 	return (
-		<li className='w-full overflow-hidden rounded-lg group z-20 block'>
+		<li className='w-full overflow-hidden rounded-lg group z-20 block p-4'>
 			<div className='relative'>
 				<span className='text-xs md:text-sm capitalize absolute bottom-4 left-4 bg-white text-app-primary border border-slate-300 px-4 py-2 rounded-xl font-medium z-20'>
 					{event.status}
@@ -30,7 +30,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 				<span className='text-xs md:text-sm capitalize absolute top-4 right-4 bg-white text-app-primary border border-slate-300 px-4 py-2 rounded-xl font-medium z-20'>
 					{dateFormatter(event.startDate)}
 				</span>
-				<div className='w-full overflow-hidden z-10'>
+				<div className='w-full overflow-hidden rounded-tl-lg rounded-tr-lg z-10'>
 					<Image
 						src={event.coverImage}
 						alt={event.coverImageAlt}

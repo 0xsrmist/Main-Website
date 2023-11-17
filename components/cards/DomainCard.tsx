@@ -8,7 +8,7 @@ type DomainCardProps = React.ComponentProps<'li'> & {
 const DomainCard: React.FC<DomainCardProps> = ({ domain }) => {
 	return (
 		<li className='flex flex-col gap-6 w-72 text-white h-full self-stretch'>
-			<div className='p-3 rounded-lg bg-app-primary/20'>
+			<div className='p-2 rounded-lg bg-app-primary/20'>
 				<Image
 					src={domain.image}
 					alt='domain'
