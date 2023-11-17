@@ -4,8 +4,8 @@ import React from 'react';
 const TermsAndConditions = () => {
 	return (
 		<main className='p-4 md:p-16'>
-			<section className='w-full max-w-7xl mx-auto mt-16'>
-				<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold mt-4'>
+			<section className='w-full max-w-7xl mx-auto mt-20'>
+				<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mt-4'>
 					Terms & Conditions
 				</h1>
 				<hr className='border-b-4 max-w-[10rem] border-b-app-primary rounded-lg mt-2' />

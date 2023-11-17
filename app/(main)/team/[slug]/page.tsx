@@ -109,7 +109,7 @@ const TeamMember = async ({ params }: Props) => {
 	]);
 	return (
 		<main className='w-full p-4 md:p-16 relative overflow-hidden min-h-screen'>
-			<div className='max-w-7xl mx-auto mt-16 gap-8 flex items-center jusitfy-center flex-col'>
+			<div className='max-w-7xl mx-auto mt-20 gap-8 flex items-center jusitfy-center flex-col'>
 				<section className='max-w-[12rem] md:max-w-xs rounded-2xl overflow-hidden'>
 					<Image
 						src={member.image}
@@ -121,7 +121,7 @@ const TeamMember = async ({ params }: Props) => {
 					/>
 				</section>
 				<section className='text-center'>
-					<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
+					<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold'>
 						{member.name}
 					</h1>
 					{member.role.name !== 'Co-founder' ? (

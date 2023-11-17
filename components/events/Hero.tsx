@@ -8,7 +8,7 @@ const Hero = () => {
 		<section className='w-full relative z-20 overflow-hidden p-4 md:p-16'>
 			<div className='grid grid-cols-1 gap-20 z-20 md:grid-cols-2 w-full max-w-7xl mx-auto mt-20'>
 				<section>
-					<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold mt-4'>
+					<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mt-4'>
 						Events
 					</h1>
 					<p className='text-base md:text-lg lg:text-xl mt-4'>

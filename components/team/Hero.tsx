@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const Hero = () => {
 	return (
-		<section className='w-full min-h-fit relative bg-[url(/assets/images/circles.svg)] z-20 bg-no-repeat bg-center bg-cover flex flex-col items-center mt-12'>
-			<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
+		<section className='w-full min-h-fit relative bg-[url(/assets/images/circles.svg)] z-20 bg-no-repeat bg-center bg-cover flex flex-col items-center mt-20'>
+			<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold'>
 				Meet our team
 			</h1>
 			<div className='mt-4 max-w-[80%] md:max-w-[60%] w-full overflow-hidden rounded-2xl z-20'>

@@ -15,7 +15,7 @@ const dateFormatter = (date: Date) =>
 const Header: React.FC<HeaderProps> = ({ event }) => {
 	return (
 		<div className='w-full'>
-			<h1 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
+			<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold'>
 				{event.title}
 			</h1>
 			<p className='font-medium flex items-center gap-4 mt-2 flex-wrap text-xs md:text-sm capitalize'>

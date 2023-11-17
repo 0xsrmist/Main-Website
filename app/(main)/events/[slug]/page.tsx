@@ -49,7 +49,7 @@ const Event = async ({ params }: Props) => {
 	}
 	return (
 		<main className='w-full'>
-			<div className='w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 mt-20 md:mt-12 p-4 md:p-16'>
+			<div className='w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 mt-20 p-4 md:p-16'>
 				<section className='h-fit md:sticky md:top-32'>
 					<div className='w-full overflow-hidden rounded-2xl'>
 						<Image

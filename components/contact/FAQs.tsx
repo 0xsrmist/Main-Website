@@ -16,7 +16,7 @@ const FAQs: React.FC<FAQsProps> = ({ faqs }) => {
 			className='mt-20 flex items-center justify-center flex-col'
 			id='faqs'
 		>
-			<h2 className='capitalize text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
+			<h2 className='capitalize text-4xl md:text-5xl lg:text-6xl leading-tight font-bold'>
 				Frequently Asked questions
 			</h2>
 			<Accordion
