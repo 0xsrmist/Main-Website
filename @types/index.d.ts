@@ -120,3 +120,5 @@ type FAQData = Readonly<{
 	answer: string;
 	order: number;
 }>;
+
+type CLUB_ROLES = 'co-founder' | 'head' | 'lead' | 'member';
