@@ -42,7 +42,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 					></Image>
 				</div>
 			</div>
-			<div className='flex flex-col items-center justify-center p-4 text-center bg-app-secondary/20'>
+			<div className='flex flex-col items-center justify-center p-4 text-center bg-app-secondary/20 rounded-bl-lg rounded-br-lg'>
 				<h3 className='text-base md:text-lg lg:text-xl mt-2 font-medium'>
 					{event.title}
 				</h3>
@@ -65,14 +65,16 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 					</div>
 				) : null}
 				<div className='mt-4 w-full flex gap-4'>
-					<Button
-						asChild
-						className='w-full bg-app-primary hover:bg-app-primary/80'
-					>
-						<Link href={event.url} target='_blank'>
-							Register now
-						</Link>
-					</Button>
+					{event.status !== 'completed' ? (
+						<Button
+							asChild
+							className='w-full bg-app-primary hover:bg-app-primary/80'
+						>
+							<Link href={event.url} target='_blank'>
+								Register now
+							</Link>
+						</Button>
+					) : null}
 					<Button asChild className='w-full' variant={'secondary'}>
 						<Link href={`/events/${event.slug}`}>Learn more</Link>
 					</Button>

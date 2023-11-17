@@ -20,31 +20,40 @@ const Location: React.FC<LocationProps> = ({ event }) => {
 				Location & Time
 			</h3>
 			{event.address ? (
-				<p className='mt-4 flex items-center gap-2'>
-					<MapPin size={20} strokeWidth={1.5} /> • {event.address}
+				<p className='mt-4'>
+					<MapPin
+						size={20}
+						strokeWidth={1.5}
+						className='mr-2 inline'
+					/>
+					<span>• {event.address}</span>
 				</p>
 			) : null}
 			{event.location ? (
-				<p className='mt-2 flex items-center gap-2'>
-					<Map size={20} strokeWidth={1.5} /> •
+				<p className='mt-2'>
+					<Map size={20} strokeWidth={1.5} className='mr-2 inline' />
 					<Link
 						href={event.location}
 						className='underline underline-offset-2 hover:text-app-primary transition-all duration-300'
 					>
-						{event.location}
+						• {event.location}
 					</Link>
 				</p>
 			) : null}
-			<p className='mt-2 flex items-center gap-2'>
-				<ListStart size={20} strokeWidth={1.5} /> •
+			<p className='mt-2'>
+				<ListStart
+					size={20}
+					strokeWidth={1.5}
+					className='mr-2 inline'
+				/>
 				<span>
-					starts at <b>{dateFormatter(event.startDate)}</b>
+					• starts at <b>{dateFormatter(event.startDate)}</b>
 				</span>
 			</p>
-			<p className='mt-2 flex items-center gap-2'>
-				<ListEnd size={20} strokeWidth={1.5} /> •
+			<p className='mt-2'>
+				<ListEnd size={20} strokeWidth={1.5} className='mr-2 inline' />
 				<span>
-					ends at <b>{dateFormatter(event.endDate)}</b>
+					• ends at <b>{dateFormatter(event.endDate)}</b>
 				</span>
 			</p>
 			{/* TODO: possibly use embed url here, or get google maps api key for this */}

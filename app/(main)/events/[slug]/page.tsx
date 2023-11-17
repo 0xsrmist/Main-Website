@@ -63,11 +63,15 @@ const Event = async ({ params }: Props) => {
 							unoptimized
 						/>
 					</div>
-					<RegisterButton url={event.url} />
+					{event.status !== 'completed' ? (
+						<RegisterButton url={event.url} />
+					) : null}
 				</section>
 				<section>
 					<Header event={event} />
-					<RegisterButton url={event.url} />
+					{event.status !== 'completed' ? (
+						<RegisterButton url={event.url} />
+					) : null}
 					<Location event={event} />
 					{event.speakers && event.speakers.length > 0 ? (
 						<Speakers speakers={event.speakers} />
