@@ -7,10 +7,25 @@ import NotificationInfo from '@/components/resuable/Notification';
 
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { activeNotificationsQuery } from '@/sanity/lib/queries';
+import { TPH_WEBSITE_URL } from '@/constants/tph';
 
 export const metadata: Metadata = {
+	metadataBase: new URL(TPH_WEBSITE_URL),
 	title: 'TPH x SRMIST',
-	description: '',
+	description: 'Official Website of TPH x SRMIST.',
+	openGraph: {
+		type: 'website',
+		title: 'TPH x SRMIST | Home',
+		description: 'Official Website of TPH x SRMIST.',
+		url: `${TPH_WEBSITE_URL}`,
+	},
+	twitter: {
+		title: 'TPH x SRMIST | Home',
+		description: 'Official Website of TPH x SRMIST.',
+		card: 'summary_large_image',
+		site: '@0xsrmist',
+		creator: '@0xsrmist',
+	},
 };
 
 export default async function RootLayout({

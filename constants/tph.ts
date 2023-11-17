@@ -9,6 +9,8 @@ type SocialsList = ReadonlyArray<{
 	Icon: LucideIcon;
 }>;
 
+export const TPH_WEBSITE_URL = 'https://0xsrmist.xyz';
+
 export const TPH_EMAIL = 'tphsrmist@gmail.com';
 
 export const TPH_CONTACT_NUMBERS = ['+916393221408', '+919352917041'];

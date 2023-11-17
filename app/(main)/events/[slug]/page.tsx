@@ -8,6 +8,7 @@ import Location from '@/components/events/Location';
 import RegisterButton from '@/components/events/RegisterButton';
 import { client } from '@/sanity/lib/client';
 import { eventPathsQuery, eventQeury } from '@/sanity/lib/queries';
+import { TPH_WEBSITE_URL } from '@/constants/tph';
 
 type Props = {
 	params: { slug: string };
@@ -32,6 +33,7 @@ export async function generateMetadata(
 			type: 'website',
 			title: `${event.title} | TPH x SRMIST`,
 			description: event.about,
+			url: `${TPH_WEBSITE_URL}/events/${event.slug}`,
 		},
 		twitter: {
 			...(event.coverImage && { images: [event.coverImage] }),

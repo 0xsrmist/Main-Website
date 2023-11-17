@@ -16,11 +16,19 @@ import {
 } from 'lucide-react';
 import z from 'zod';
 import { Button } from '@/components/ui/button';
+import { TPH_WEBSITE_URL } from '@/constants/tph';
 
 type Props = {
 	params: { slug: string };
 	searchParams: { [key: string]: string | string[] | undefined };
 };
+
+function extractTwitterUsername(url: string) {
+	const regex =
+		/(?:https?:\/\/(?:www\.)?(?:twitter\.com|x\.com)\/|(?:(?:twitter\.com|x\.com)\/))(?:(?!\/)[\w]){1,15}/;
+	const match = url.match(regex);
+	return match ? match[0] : null;
+}
 
 export async function generateStaticParams() {
 	const members = await client.fetch(teamMemberPathsQuery);
@@ -32,6 +40,7 @@ export async function generateMetadata(
 	parent: ResolvingMetadata
 ): Promise<Metadata> {
 	const member = await client.fetch<TeamMember>(teamMemberQuery, params);
+	const twitterUsername = extractTwitterUsername(member?.twitter || '');
 	return {
 		title: `${member.name} | TPH x SRMIST`,
 		description: member.bio,
@@ -40,12 +49,14 @@ export async function generateMetadata(
 			type: 'website',
 			title: `${member.name} | TPH x SRMIST`,
 			description: member.bio,
+			url: `${TPH_WEBSITE_URL}/team/${member.slug}`,
 		},
 		twitter: {
 			...(member.image && { images: [member.image] }),
 			card: 'summary_large_image',
 			title: `${member.name} | TPH x SRMIST`,
 			description: member.bio,
+			...(twitterUsername && { creator: `@${twitterUsername}` }),
 		},
 	};
 }
