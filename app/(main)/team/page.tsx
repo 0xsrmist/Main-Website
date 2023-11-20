@@ -3,6 +3,8 @@ import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { teamMembersQuery } from '@/sanity/lib/queries';
 import Hero from '@/components/team/Hero';
 import Members from '@/components/team/Members';
+import CoFounders from '@/components/team/CoFounders';
+import Presidents from '@/components/team/Presidents';
 
 async function sortTeamMembers(members: TeamMember[]) {
 	const FILTERED_TEAM_MEMBERS: Record<CLUB_ROLES, TeamMember[]> = {
@@ -10,6 +12,9 @@ async function sortTeamMembers(members: TeamMember[]) {
 		head: [],
 		lead: [],
 		member: [],
+		director: [],
+		president: [],
+		'vice-president': [],
 	};
 	Object.keys(FILTERED_TEAM_MEMBERS).forEach((role) => {
 		members.forEach((member) => {
@@ -26,9 +31,15 @@ const Team = async () => {
 		query: teamMembersQuery,
 	});
 	const members = await sortTeamMembers(teamMembers);
+
 	return (
 		<main className='w-full p-4 md:p-16 overflow-hidden'>
 			<Hero />
+			<CoFounders members={members} />
+			{members['president'].length !== 0 ||
+			members['president'].length !== 0 ? (
+				<Presidents members={members} />
+			) : null}
 			<Members members={members} />
 		</main>
 	);

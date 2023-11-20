@@ -10,16 +10,6 @@ const Members: React.FC<MembersProps> = ({ members }) => {
 		<section className='w-full mt-4 md:mt-12 max-w-7xl mx-auto text-center'>
 			<section className='mt-16'>
 				<h2 className='uppercase text-base md:text-lg lg:text-xl font-medium'>
-					Club <span className='text-app-primary'>founders</span>
-				</h2>
-				<ul className='w-full flex flex-wrap items-center justify-center gap-8 mt-4'>
-					{members['co-founder'].map((member) => (
-						<TeamMemberCard member={member} key={member._id} />
-					))}
-				</ul>
-			</section>
-			<section className='mt-16'>
-				<h2 className='uppercase text-base md:text-lg lg:text-xl font-medium'>
 					Club <span className='text-app-primary'>Heads</span>
 				</h2>
 				<ul className='w-full flex flex-wrap items-center justify-center gap-8 mt-4'>
