@@ -171,6 +171,15 @@ export default defineType({
 		select: {
 			title: 'name',
 			media: 'image',
+			role: 'role.name',
+		},
+		prepare(selection) {
+			const { title, media, role } = selection;
+			return {
+				title: title ?? 'unknown',
+				media: media,
+				subtitle: role ?? 'unknown role',
+			};
 		},
 	},
 });

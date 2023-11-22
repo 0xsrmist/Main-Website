@@ -8,7 +8,7 @@ import Presidents from '@/components/team/Presidents';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { teamMembersQuery } from '@/sanity/lib/queries';
 
-export async function sortTeamMembersByRole(members: TeamMember[]) {
+async function sortTeamMembersByRole(members: TeamMember[]) {
 	const FILTERED_TEAM_MEMBERS: Record<CLUB_ROLES, TeamMember[]> = {
 		'co-founder': [],
 		head: [],
