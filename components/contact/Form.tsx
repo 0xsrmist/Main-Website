@@ -113,7 +113,7 @@ const ContactForm = () => {
 	}
 
 	return (
-		<section className='z-20 w-full'>
+		<section className='z-20 w-full flex items-center justify-center'>
 			<div className='bg-app-bg max-w-xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-70 w-full h-fit rounded-2xl p-4'>
 				{alreadySubmitted ? (
 					<div>
