@@ -129,3 +129,5 @@ type CLUB_ROLES =
 	| 'head'
 	| 'lead'
 	| 'member';
+
+type CLUB_DOMAINS = 'technical' | 'corporate' | 'creatives';
