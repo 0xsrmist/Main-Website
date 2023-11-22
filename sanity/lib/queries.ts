@@ -43,10 +43,9 @@ export const teamMemberPathsQuery = groq`*[_type == "team" && defined(slug.curre
 }`;
 
 // Get all team members
-export const teamMembersQuery = groq`*[_type == "team"]{
-  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, instagram, twitter, linkedin, website, email, youtube, qualifications, "domain": domain->{name, description, "slug": slug.current}, "role": role->{name, "slug": slug.current, description}
-} | order(role->order asc)`;
-
+export const teamMembersQuery = groq`*[_type == "team" && currentlyWorking == true]{
+  ..., _id, "slug": slug.current, "image": image.asset->url, "alt": image.alt, "domain": domain->{name, description, "slug": slug.current}, "role": role->{name, "slug": slug.current, description}
+} | order(role->order desc)`;
 // Get all domains
 export const domainsQuery = groq`*[_type == "domain"]{
   _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, description

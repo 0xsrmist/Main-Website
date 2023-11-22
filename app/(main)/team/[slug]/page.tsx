@@ -147,7 +147,7 @@ const TeamMember = async ({ params }: Props) => {
 					<h3 className='text-base md:text-lg max-w-4xl mx-auto'>
 						{member?.bio || null}
 					</h3>
-					<ul className='mt-8 max-w-4xl w-full mx-auto flex flex-col gap-4'>
+					<ul className='mt-8 max-w-xl w-full mx-auto flex flex-col gap-4'>
 						{socials.map((social, idx) => (
 							<li key={`${member._id}-social-${idx}`}>
 								<Button

@@ -8,7 +8,7 @@ type TeamMemberCardProps = React.ComponentProps<'li'> & {
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
 	return (
-		<li className='flex flex-col items-center max-w-lg w-full'>
+		<li className='flex flex-col items-center max-w-sm w-full'>
 			<div className='relative z-20 max-w-[12rem] w-full mx-auto group'>
 				<div className='rounded-full relative overflow-hidden max-w-[12rem] w-full z-10 shadow-md shadow-black'>
 					<Image

@@ -12,7 +12,7 @@ const Hero = () => {
 				<div id='stars2' />
 				<div id='stars3' />
 				<div id='stars4' />
-				<div className='w-full h-full'>
+				{/* <div className='w-full h-full'>
 					<Image
 						src='/assets/images/hero.webp'
 						alt=''
@@ -22,7 +22,7 @@ const Hero = () => {
 						priority
 						unoptimized
 					/>
-				</div>
+				</div> */}
 			</div>
 			<div className='w-full max-w-7xl flex items-center justify-center text-center flex-col h-fit p-4 md:p-16 z-10'>
 				<div className='w-8 md:w-16'>

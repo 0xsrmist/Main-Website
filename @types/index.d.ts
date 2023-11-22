@@ -121,4 +121,13 @@ type FAQData = Readonly<{
 	order: number;
 }>;
 
-type CLUB_ROLES = 'co-founder' | 'head' | 'lead' | 'member';
+type CLUB_ROLES =
+	| 'co-founder'
+	| 'president'
+	| 'vice-president'
+	| 'director'
+	| 'head'
+	| 'lead'
+	| 'member';
+
+type CLUB_DOMAINS = 'technical' | 'corporate' | 'creatives';
