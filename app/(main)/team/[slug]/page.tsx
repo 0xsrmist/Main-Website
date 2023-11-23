@@ -67,12 +67,17 @@ const userSocials = z
 	.array(
 		z.object({
 			Icon: z.custom<LucideIcon>(),
-			url: z.string().or(z.null()),
+			url: z.string().or(z.null()).optional(),
 			title: z.string(),
 		})
 	)
 	.transform((val) =>
-		val.filter((social) => social.url !== null && social.url.length !== 0)
+		val.filter(
+			(social) =>
+				typeof social.url !== 'undefined' &&
+				social.url !== null &&
+				social.url?.length !== 0
+		)
 	);
 
 type UserSocials = z.infer<typeof userSocials>;
