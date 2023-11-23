@@ -13,6 +13,7 @@ import {
 	Mail,
 	Globe,
 	Youtube,
+	Github,
 } from 'lucide-react';
 import z from 'zod';
 import { Button } from '@/components/ui/button';
@@ -83,10 +84,19 @@ const dateFormatter = (date: Date) =>
 
 const TeamMember = async ({ params }: Props) => {
 	const member = await client.fetch<TeamMember>(teamMemberQuery, params);
+
 	if (!member) {
 		redirect('/team');
 	}
+
+	console.log(member);
+
 	const socials: UserSocials = userSocials.parse([
+		{
+			Icon: Github,
+			url: member.github,
+			title: 'GitHub',
+		},
 		{
 			Icon: Instagram,
 			url: member.instagram,
@@ -137,7 +147,7 @@ const TeamMember = async ({ params }: Props) => {
 					</h1>
 					{member.role.name !== 'Co-founder' ? (
 						<h2 className='text-base md:text-lg lg:text-xl'>
-							{member.role.name} at {member.domain.name} domain
+							{member.role.name} • {member.domain.name} domain
 						</h2>
 					) : (
 						<h2 className='text-base md:text-lg lg:text-xl'>
