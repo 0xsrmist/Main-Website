@@ -58,8 +58,8 @@ const NotificationInfo: React.FC<NotificationInfoProps> = ({
 									{
 										notifications[currentNotificationIndex]
 											.title
-									}
-									-
+									}{' '}
+									-{' '}
 									{
 										notifications[currentNotificationIndex]
 											.description
