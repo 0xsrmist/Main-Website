@@ -26,6 +26,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const event = await client.fetch<EventData>(eventQeury, params);
 	return {
+		metadataBase: new URL(TPH_WEBSITE_URL),
 		title: `${event.title} | TPH x SRMIST`,
 		description: event.about,
 		openGraph: {

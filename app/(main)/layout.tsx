@@ -10,6 +10,7 @@ import { activeNotificationsQuery } from '@/sanity/lib/queries';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
 
 export const metadata: Metadata = {
+	metadataBase: new URL(TPH_WEBSITE_URL),
 	title: 'TPH x SRMIST',
 	description: 'Official Website of TPH x SRMIST.',
 	openGraph: {

@@ -43,6 +43,7 @@ export async function generateMetadata(
 	const member = await client.fetch<TeamMember>(teamMemberQuery, params);
 	const twitterUsername = extractTwitterUsername(member?.twitter || '');
 	return {
+		metadataBase: new URL(TPH_WEBSITE_URL),
 		title: `${member.name} | TPH x SRMIST`,
 		description: member.bio,
 		openGraph: {

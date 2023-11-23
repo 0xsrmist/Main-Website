@@ -3,6 +3,7 @@ import { client } from '@/sanity/lib/client';
 import { postPathsQuery, postQuery } from '@/sanity/lib/queries';
 import { Metadata, ResolvingMetadata } from 'next';
 import { redirect } from 'next/navigation';
+import { TPH_WEBSITE_URL } from '@/constants/tph';
 
 type Props = {
 	params: { slug: string };
@@ -20,6 +21,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const post = await client.fetch<BlogPost>(postQuery, params);
 	return {
+		metadataBase: new URL(TPH_WEBSITE_URL),
 		title: `${post.title} | TPH x SRMIST`,
 		description: post.description,
 		openGraph: {
