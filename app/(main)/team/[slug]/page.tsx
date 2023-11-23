@@ -13,6 +13,7 @@ import {
 	Mail,
 	Globe,
 	Youtube,
+	Github,
 } from 'lucide-react';
 import z from 'zod';
 import { Button } from '@/components/ui/button';
@@ -86,7 +87,13 @@ const TeamMember = async ({ params }: Props) => {
 	if (!member) {
 		redirect('/team');
 	}
+
 	const socials: UserSocials = userSocials.parse([
+		{
+			Icon: Github,
+			url: member.github,
+			title: 'GitHub',
+		},
 		{
 			Icon: Instagram,
 			url: member.instagram,
@@ -119,8 +126,8 @@ const TeamMember = async ({ params }: Props) => {
 		},
 	]);
 	return (
-		<main className='w-full p-4 md:p-16 relative overflow-hidden min-h-screen'>
-			<div className='max-w-7xl mx-auto mt-20 gap-8 flex items-center jusitfy-center flex-col'>
+		<main className='w-full p-4 md:p-16 relative overflow-hidden min-h-screen z-20'>
+			<div className='max-w-7xl mx-auto mt-20 gap-8 flex items-center jusitfy-center flex-col z-20'>
 				<section className='max-w-[12rem] md:max-w-xs rounded-2xl overflow-hidden'>
 					<Image
 						src={member.image}
@@ -137,7 +144,7 @@ const TeamMember = async ({ params }: Props) => {
 					</h1>
 					{member.role.name !== 'Co-founder' ? (
 						<h2 className='text-base md:text-lg lg:text-xl'>
-							{member.role.name} at {member.domain.name} domain
+							{member.role.name} • {member.domain.name} domain
 						</h2>
 					) : (
 						<h2 className='text-base md:text-lg lg:text-xl'>
@@ -175,7 +182,7 @@ const TeamMember = async ({ params }: Props) => {
 					) : null}
 				</section>
 			</div>
-			<div className='absolute w-full -left-8 md:left-0 top-0 max-w-[12rem] md:max-w-sm'>
+			<div className='absolute w-full -left-8 md:left-0 top-0 max-w-[12rem] md:max-w-sm -z-10'>
 				<Image
 					src='/assets/images/looper.png'
 					width={100}
@@ -185,7 +192,7 @@ const TeamMember = async ({ params }: Props) => {
 					unoptimized
 				/>
 			</div>
-			<div className='absolute top-8 w-full -right-20 md:-right-32 max-w-[8rem] md:max-w-sm animate-float'>
+			<div className='absolute top-8 w-full -right-20 md:-right-32 max-w-[8rem] md:max-w-sm animate-float -z-10'>
 				<Image
 					src='/assets/images/planet.png'
 					width={100}

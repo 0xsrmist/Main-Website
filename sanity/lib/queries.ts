@@ -24,7 +24,7 @@ export const eventQeury = groq`*[_type == "event" && slug.current == $slug][0]{
 
 // Get a single team member by its lug
 export const teamMemberQuery = groq`*[_type == "team" && slug.current == $slug][0]{
-  _id, "slug": slug.current, name, "image": image.asset->url, "alt": image.alt, bio, currentlyWorking, startDate, endDate, instagram, twitter, linkedin, website, email, youtube, qualifications, "domain": domain->{name, description, "slug": slug.current, "image": image.asset->url, "alt": image.alt}, "role": role->{name, "slug": slug.current, description}
+  ..., _id, "slug": slug.current, "image": image.asset->url, "alt": image.alt, "domain": domain->{name, description, "slug": slug.current, "image": image.asset->url, "alt": image.alt}, "role": role->{name, "slug": slug.current, description}
 }`;
 
 // Get all post slugs
