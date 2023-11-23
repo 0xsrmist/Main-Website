@@ -35,6 +35,7 @@ type TeamMember = Readonly<{
 	domain: Domain;
 	role: ClubRole;
 	languages?: string[];
+	github?: string;
 	instagram?: string;
 	twitter?: string;
 	linkedin?: string;

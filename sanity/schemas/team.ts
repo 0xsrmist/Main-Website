@@ -124,6 +124,13 @@ export default defineType({
 			group: 'professional',
 		}),
 		defineField({
+			name: 'github',
+			title: 'GitHub Profile',
+			type: 'url',
+			group: 'social',
+			description: "The team member's GitHub profile URL.",
+		}),
+		defineField({
 			name: 'instagram',
 			title: 'Instagram Profile',
 			type: 'url',
