@@ -11,7 +11,7 @@ export default defineType({
 			description:
 				'The title or heading of the notification, serving as the main call to action for the user.',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(100),
 		}),
 		defineField({
 			name: 'description',
@@ -19,7 +19,7 @@ export default defineType({
 			description:
 				'A detailed description of the notification, providing additional context or information about the call to action.',
 			type: 'text',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(100),
 		}),
 		defineField({
 			name: 'url',

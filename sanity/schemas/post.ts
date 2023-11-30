@@ -11,7 +11,7 @@ export default defineType({
 			type: 'string',
 			description:
 				'Enter the title of your post. This is the headline that captures the essence of your content.',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(160),
 		}),
 		defineField({
 			name: 'slug',

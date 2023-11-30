@@ -11,7 +11,7 @@ export default defineType({
 			description:
 				'The name or title of the domain, offering a clear and concise identifier.',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(1).max(50),
 		}),
 		defineField({
 			name: 'description',
@@ -19,7 +19,7 @@ export default defineType({
 			description:
 				'A detailed description of the domain, providing additional context or information about its characteristics or purpose.',
 			type: 'text',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(10).max(500),
 		}),
 		defineField({
 			name: 'slug',

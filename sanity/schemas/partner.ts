@@ -11,7 +11,7 @@ export default defineType({
 			description:
 				'The name or title of the partner, offering a clear and concise identifier.',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(100),
 		}),
 		defineField({
 			name: 'description',
@@ -19,7 +19,7 @@ export default defineType({
 			description:
 				'A detailed description of the partner, providing additional context or information about their characteristics or purpose of collaboration.',
 			type: 'text',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(500),
 		}),
 		defineField({
 			name: 'website',

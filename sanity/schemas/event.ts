@@ -10,7 +10,7 @@ export default defineType({
 			title: 'Event Title',
 			description: 'The title or name of the event.',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(160),
 		}),
 		defineField({
 			name: 'slug',
@@ -29,7 +29,7 @@ export default defineType({
 			title: 'About',
 			description: 'A short information or catchphrase about the event.',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(5).max(1500),
 		}),
 		defineField({
 			name: 'description',

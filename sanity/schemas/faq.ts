@@ -10,6 +10,7 @@ export default defineType({
 			title: 'Question',
 			type: 'string',
 			description: 'The frequently asked question itself.',
+			validation: (Rule) => Rule.required().min(5).max(200),
 		}),
 		defineField({
 			name: 'answer',
@@ -17,6 +18,7 @@ export default defineType({
 			type: 'text',
 			description:
 				'The detailed answer to the frequently asked question.',
+			validation: (Rule) => Rule.required().min(5).max(1000),
 		}),
 		defineField({
 			name: 'order',
@@ -24,7 +26,7 @@ export default defineType({
 			description:
 				'A numerical value representing the priority or order of this Q/A. Lower values indicate higher priority. Use this field to customize the order in which Q/A are displayed or sorted.',
 			type: 'number',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().integer().min(1),
 		}),
 	],
 	orderings: [

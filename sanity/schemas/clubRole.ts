@@ -11,7 +11,7 @@ export default defineType({
 			description:
 				'The name or title of the club role, offering a clear and concise identifier.',
 			type: 'string',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(1).max(50),
 		}),
 		defineField({
 			name: 'description',
@@ -19,7 +19,7 @@ export default defineType({
 			description:
 				'A detailed description of the club role, providing additional context or information about its characteristics or purpose.',
 			type: 'text',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().min(10).max(500),
 		}),
 		defineField({
 			name: 'slug',
@@ -39,7 +39,7 @@ export default defineType({
 			description:
 				'A numerical value representing the priority or order of this role. Lower values indicate higher priority. Use this field to customize the order in which roles are displayed or sorted.',
 			type: 'number',
-			validation: (Rule) => Rule.required(),
+			validation: (Rule) => Rule.required().integer().min(1),
 		}),
 	],
 });
