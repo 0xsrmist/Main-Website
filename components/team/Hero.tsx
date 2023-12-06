@@ -9,10 +9,10 @@ import Image from 'next/image';
 const Hero = () => {
 	return (
 		<section className='w-full min-h-fit relative bg-[url(/assets/images/circles.svg)] z-20 bg-no-repeat bg-center bg-cover flex flex-col items-center mt-20'>
-			<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold'>
+			<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold text-center z-20'>
 				Meet our team
 			</h1>
-			<div className='mt-4 max-w-[80%] md:max-w-[60%] w-full overflow-hidden rounded-2xl z-20'>
+			<div className='mt-4 max-w-[96%] md:max-w-[60%] w-full overflow-hidden rounded-2xl z-20'>
 				<Image
 					src={'/assets/images/team.jpg'}
 					width={100}
