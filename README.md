@@ -70,7 +70,7 @@ We welcome contributions from the community. To contribute to the project, follo
 
 - **Contribution Guidelines:** If you're interested in contributing to the project, please follow the guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-- **In-Depth Guide to Sanity CMS:** For detailed instructions on adding new documents to Sanity, refer to our [GitHub Wiki](https://github.com/0xsrmist/Main-Website/wiki/1.-Home). This guide provides a step-by-step flow to ensure a seamless content management experience.
+- **In-Depth Guide to Sanity CMS:** For detailed instructions on adding new documents to Sanity, refer to our [GitHub Wiki](https://github.com/0xsrmist/Main-Website/wiki/). This guide provides a step-by-step flow to ensure a seamless content management experience.
 
 ## License
 
