@@ -1,3 +1,8 @@
+/**
+ * Co-Founders Component - Team Page
+ */
+
+// Dependecies
 import React from 'react';
 import TeamMemberCard from '../cards/TeamMember';
 

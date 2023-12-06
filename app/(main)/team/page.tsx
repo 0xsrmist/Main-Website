@@ -1,3 +1,8 @@
+/**
+ * All Team Members Page
+ */
+
+// Dependencies
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Hero from '@/components/team/Hero';

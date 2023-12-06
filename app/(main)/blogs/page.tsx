@@ -1,3 +1,8 @@
+/**
+ * Blogs Page
+ */
+
+// Dependencies
 import React from 'react';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { postsQuery } from '@/sanity/lib/queries';

@@ -1,3 +1,8 @@
+/**
+ * Individual Blog Page
+ */
+
+// Dependencies
 import React from 'react';
 import { client } from '@/sanity/lib/client';
 import { postPathsQuery, postQuery } from '@/sanity/lib/queries';

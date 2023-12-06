@@ -1,3 +1,8 @@
+/**
+ * Blog Card Component
+ */
+
+// Dependecies
 import React from 'react';
 
 const BlogCard = () => {

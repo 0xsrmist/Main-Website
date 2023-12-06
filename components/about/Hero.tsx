@@ -1,3 +1,8 @@
+/**
+ * Hero Component - About Page
+ */
+
+// Dependecies
 import React from 'react';
 import Image from 'next/image';
 

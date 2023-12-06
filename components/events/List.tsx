@@ -1,3 +1,8 @@
+/**
+ * List Component - Events Page
+ */
+
+// Dependecies
 import React from 'react';
 import EventInfo from '@/components/cards/EventInfo';
 

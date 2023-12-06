@@ -1,3 +1,8 @@
+/**
+ * Individual Events Page
+ */
+
+// Dependencies
 import React from 'react';
 import Image from 'next/image';
 import { Metadata, ResolvingMetadata } from 'next';

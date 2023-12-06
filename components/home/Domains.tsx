@@ -1,3 +1,8 @@
+/**
+ * Domains Component - Home Page
+ */
+
+// Dependecies
 import React from 'react';
 import DomainCard from '../cards/DomainCard';
 

@@ -1,4 +1,9 @@
 'use client';
+/**
+ * Infinite Looper Component
+ */
+
+// Dependecies
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { twMerge } from 'tailwind-merge';
 

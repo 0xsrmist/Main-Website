@@ -1,5 +1,10 @@
-import { TPH_PRIVACY_POLICY } from '@/constants/tph';
+/**
+ * Privacy Policy Page
+ */
+
+// Dependencies
 import React from 'react';
+import { TPH_PRIVACY_POLICY } from '@/constants/tph';
 
 const PrivacyPolicy = () => {
 	return (

@@ -1,3 +1,8 @@
+/**
+ * Header Component - Events Page
+ */
+
+// Dependecies
 import React from 'react';
 import { Calendar, Clock3, LocateFixed, MapPin } from 'lucide-react';
 

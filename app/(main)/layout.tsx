@@ -1,3 +1,8 @@
+/**
+ * Home Layout
+ */
+
+// Dependencies
 import type { Metadata } from 'next';
 import Navbar from '@/layouts/Navbar';
 import Footer from '@/layouts/Footer';

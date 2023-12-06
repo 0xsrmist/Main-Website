@@ -1,3 +1,8 @@
+/**
+ * Partners Component - Home Page
+ */
+
+// Dependecies
 import React from 'react';
 import InfiniteLooper from '../resuable/InfiniteLooper';
 import Image from 'next/image';

@@ -1,3 +1,8 @@
+/**
+ * About Page
+ */
+
+// Dependencies
 import React from 'react';
 import Hero from '@/components/about/Hero';
 

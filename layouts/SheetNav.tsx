@@ -1,5 +1,9 @@
 'use client';
+/**
+ * Sheet Menu Component
+ */
 
+// Dependecies
 import React, { useState } from 'react';
 import {
 	Sheet,

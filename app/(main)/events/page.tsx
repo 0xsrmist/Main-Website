@@ -1,3 +1,8 @@
+/**
+ * All Events Page
+ */
+
+// Dependencies
 import React from 'react';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { eventsQuery } from '@/sanity/lib/queries';

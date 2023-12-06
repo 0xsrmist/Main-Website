@@ -1,3 +1,8 @@
+/**
+ * Contact Page
+ */
+
+// Dependencies
 import React from 'react';
 import Hero from '@/components/contact/Hero';
 import FAQs from '@/components/contact/FAQs';

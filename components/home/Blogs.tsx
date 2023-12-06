@@ -1,3 +1,8 @@
+/**
+ * Blogs Component - Home Page
+ */
+
+// Dependecies
 import React from 'react';
 
 const Blogs = () => {

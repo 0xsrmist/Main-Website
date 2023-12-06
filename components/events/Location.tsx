@@ -1,3 +1,8 @@
+/**
+ * Location Component - Events Page
+ */
+
+// Dependecies
 import React from 'react';
 import Link from 'next/link';
 import { Map, MapPin, ListStart, ListEnd } from 'lucide-react';

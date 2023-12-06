@@ -1,5 +1,10 @@
-import { TPH_TERMS_AND_CONDITIONS } from '@/constants/tph';
+/**
+ * Terms and Conditions Page
+ */
+
+// Dependencies
 import React from 'react';
+import { TPH_TERMS_AND_CONDITIONS } from '@/constants/tph';
 
 const TermsAndConditions = () => {
 	return (
