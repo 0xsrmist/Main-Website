@@ -46,7 +46,7 @@ export default defineType({
 			name: 'mainImage',
 			title: 'Main image',
 			description:
-				'Upload or select the main image for your post. It serves as the visual representation of your content. You can also provide an alternative text for the image.',
+				'Upload or select the main image for your post. It serves as the visual representation of your content. You can also provide an alternative text for the image. (Recommended 16:9 ratio for image)',
 			type: 'image',
 			options: {
 				hotspot: true,
