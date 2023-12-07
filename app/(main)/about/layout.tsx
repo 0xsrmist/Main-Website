@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 	description:
 		'Welcome to TPHXSRM, the Product House SRM Web3 Club. We are a community of tech enthusiasts who explore and innovate in the field of Web3 and blockchain.',
 	openGraph: {
+		images: ['/opengraph-image.png'],
 		type: 'website',
 		title: 'About | TPH x SRMIST',
 		description:
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 		url: `${TPH_WEBSITE_URL}/about`,
 	},
 	twitter: {
+		images: ['twitter-image.png'],
 		title: 'About | TPH x SRMIST',
 		description:
 			'Welcome to TPHXSRM, the Product House SRM Web3 Club. We are a community of tech enthusiasts who explore and innovate in the field of Web3 and blockchain.',
