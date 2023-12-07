@@ -41,6 +41,11 @@ export const FOOTER_NAVIGATION: NavdataCollection = [
 		target: '_self',
 	},
 	{
+		name: 'Recruitments',
+		url: '/recruitments',
+		target: '_self',
+	},
+	{
 		name: 'Terms & Conditions',
 		url: '/terms',
 		target: '_self',
