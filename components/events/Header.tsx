@@ -14,7 +14,6 @@ const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'medium',
 		timeStyle: 'short',
-		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 const Header: React.FC<HeaderProps> = ({ event }) => {

@@ -13,7 +13,6 @@ const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'short',
 		timeStyle: 'short',
-		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 type EventInfoProps = React.ComponentProps<'li'> & {

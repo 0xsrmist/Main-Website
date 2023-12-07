@@ -90,7 +90,6 @@ type UserSocials = z.infer<typeof userSocials>;
 const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'medium',
-		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 const TeamMember = async ({ params }: Props) => {

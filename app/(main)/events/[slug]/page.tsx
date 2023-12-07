@@ -14,6 +14,7 @@ import RegisterButton from '@/components/events/RegisterButton';
 import { client } from '@/sanity/lib/client';
 import { eventPathsQuery, eventQeury } from '@/sanity/lib/queries';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
+import EventDescription from '@/components/events/Description';
 
 type Props = {
 	params: { slug: string };
@@ -79,6 +80,9 @@ const Event = async ({ params }: Props) => {
 						<RegisterButton url={event.url} />
 					) : null}
 					<Location event={event} />
+					{event.description ? (
+						<EventDescription event={event} />
+					) : null}
 					{event.speakers && event.speakers.length > 0 ? (
 						<Speakers speakers={event.speakers} />
 					) : null}
