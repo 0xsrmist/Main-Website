@@ -27,7 +27,7 @@ const SheetNav = () => {
 
 	return (
 		<Sheet open={open} onOpenChange={setOpen}>
-			<SheetTrigger asChild className='flex md:hidden'>
+			<SheetTrigger asChild className='flex lg:hidden'>
 				<Button
 					variant={'secondary'}
 					size={'icon'}
@@ -36,7 +36,7 @@ const SheetNav = () => {
 					<Menu />
 				</Button>
 			</SheetTrigger>
-			<SheetContent side={'top'} className='block md:hidden'>
+			<SheetContent side={'top'} className='block lg:hidden'>
 				<SheetHeader>
 					<SheetTitle className='text-center'>
 						TPH X SRMIST

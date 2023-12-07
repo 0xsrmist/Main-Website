@@ -28,7 +28,7 @@ const Navbar = () => {
 			className={`${header} w-full z-50 transition-all duration-300 md:px-16 p-4`}
 		>
 			<div className='w-full max-w-7xl mx-auto flex items-center justify-between'>
-				<Link href='/' className='w-28 md:w-40 block'>
+				<Link href='/' className='w-28 lg:w-40 block'>
 					<Image
 						src='/assets/images/logo.png'
 						alt='TPHxSRMIST'
@@ -38,7 +38,7 @@ const Navbar = () => {
 						unoptimized
 					/>
 				</Link>
-				<ul className='hidden md:flex items-center gap-8'>
+				<ul className='hidden lg:flex items-center gap-8'>
 					{NAVBAR_NAVIGATION.map((item) => (
 						<li key={`navbar-nav-${item.url}`}>
 							<Link
