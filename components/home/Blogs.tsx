@@ -5,6 +5,9 @@
 // Dependencies
 import React from 'react';
 import BlogPostCard from '../cards/BlogCard';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 type BlogsProps = React.ComponentProps<'section'> & {
 	posts: BlogPost[];
@@ -30,6 +33,20 @@ const Blogs: React.FC<BlogsProps> = ({ posts }) => {
 					/>
 				))}
 			</ul>
+			<Button
+				asChild
+				variant={'link'}
+				className='text-white decoration-white ml-auto mt-4 group'
+			>
+				<Link href='/blogs' className='flex items-center gap-1'>
+					Explore more blogs{' '}
+					<ArrowRight
+						className='group-hover:translate-x-1 transition-all duration-300'
+						size={16}
+						strokeWidth={1.5}
+					/>
+				</Link>
+			</Button>
 		</section>
 	);
 };
