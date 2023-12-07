@@ -22,8 +22,8 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-	const events = await client.fetch(recruitmentPathsQuery);
-	return events;
+	const recruitments = await client.fetch(recruitmentPathsQuery);
+	return recruitments;
 }
 
 export async function generateMetadata(
@@ -40,7 +40,7 @@ export async function generateMetadata(
 			type: 'website',
 			title: `${recruitment.title} | TPH x SRMIST`,
 			description: recruitment.about,
-			url: `${TPH_WEBSITE_URL}/events/${recruitment.slug}`,
+			url: `${TPH_WEBSITE_URL}/recruitments/${recruitment.slug}`,
 		},
 		twitter: {
 			...(recruitment.coverImage && { images: [recruitment.coverImage] }),

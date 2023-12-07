@@ -36,6 +36,7 @@ export async function generateMetadata(
 			type: 'website',
 			title: `${post.title} | TPH x SRMIST`,
 			description: post.description,
+			url: `${TPH_WEBSITE_URL}/blogs/${post.slug}`,
 		},
 		twitter: {
 			...(post.image && { images: [post.image] }),

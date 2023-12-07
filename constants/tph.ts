@@ -9,7 +9,7 @@ type SocialsList = ReadonlyArray<{
 	Icon: LucideIcon;
 }>;
 
-export const TPH_WEBSITE_URL = 'https://0xsrmist.xyz';
+export const TPH_WEBSITE_URL = 'https://0xsrmist.xyz' as const;
 
 export const TPH_EMAIL = 'tphsrmist@gmail.com';
 
