@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 	description:
 		'Explore the dynamically creative and strategically mastered ventures. From immersive blockchain experiences to engaging tech activities, our carefully curated events offer a gateway to explore the latest technologies.',
 	openGraph: {
+		images: ['/opengraph-image.png'],
 		type: 'website',
 		title: 'Events | TPH x SRMIST',
 		description:
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 		url: `${TPH_WEBSITE_URL}/events`,
 	},
 	twitter: {
+		images: ['/twitter-image.png'],
 		title: 'Events | TPH x SRMIST',
 		description:
 			'Explore the dynamically creative and strategically mastered ventures. From immersive blockchain experiences to engaging tech activities, our carefully curated events offer a gateway to explore the latest technologies.',

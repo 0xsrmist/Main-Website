@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 	description:
 		"We are on the lookout for like-minded individuals who share our enthusiasm for technology and creativity. Together, let's embark on a journey of discovery, innovation, and collective growth.",
 	openGraph: {
+		images: ['/opengraph-image.png'],
 		type: 'website',
 		title: 'Recruitments | TPH x SRMIST',
 		description:
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
 		url: `${TPH_WEBSITE_URL}/recruitments`,
 	},
 	twitter: {
+		images: ['/twitter-image.png'],
 		title: 'Recruitments | TPH x SRMIST',
 		description:
 			"We are on the lookout for like-minded individuals who share our enthusiasm for technology and creativity. Together, let's embark on a journey of discovery, innovation, and collective growth.",
