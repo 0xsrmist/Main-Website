@@ -43,10 +43,7 @@ const Recruitment: React.FC<RecruitmentProps> = ({ recruitment }) => {
 								asChild
 								className='bg-app-primary hover:bg-app-primary/80'
 							>
-								<Link
-									href={recruitment?.url ?? ''}
-									target='_blank'
-								>
+								<Link href={recruitment.url} target='_blank'>
 									Apply now
 								</Link>
 							</Button>

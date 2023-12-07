@@ -23,7 +23,9 @@ const Recruitments = async () => {
 	return (
 		<main className='w-full'>
 			<Hero />
-			<Recruitment recruitment={latestRecruitment} />
+			{latestRecruitment ? (
+				<Recruitment recruitment={latestRecruitment} />
+			) : null}
 			<section className='max-w-7xl mx-auto' id='recruitments'>
 				<h2 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold text-center'>
 					Past Recruitments
