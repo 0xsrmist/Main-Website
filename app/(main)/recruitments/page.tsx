@@ -20,7 +20,6 @@ const Recruitments = async () => {
 	const pastRecruitments = await sanityFetch<EventData[]>({
 		query: pastRecruitmentEventsQuery,
 	});
-	console.log(latestRecruitment);
 	return (
 		<main className='w-full'>
 			<Hero />
