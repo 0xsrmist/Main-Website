@@ -29,6 +29,11 @@ const COMMON_NAVIGATION: NavdataCollection = [
 		url: '/team',
 		target: '_self',
 	},
+	{
+		name: 'Blogs',
+		url: '/blogs',
+		target: '_self',
+	},
 ];
 
 export const NAVBAR_NAVIGATION: NavdataCollection = [...COMMON_NAVIGATION];
@@ -38,6 +43,11 @@ export const FOOTER_NAVIGATION: NavdataCollection = [
 	{
 		name: 'FAQs',
 		url: '/contact#faqs',
+		target: '_self',
+	},
+	{
+		name: 'Recruitments',
+		url: '/recruitments',
 		target: '_self',
 	},
 	{

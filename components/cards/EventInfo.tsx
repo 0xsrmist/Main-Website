@@ -13,7 +13,6 @@ const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'short',
 		timeStyle: 'short',
-		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 type EventInfoProps = React.ComponentProps<'li'> & {
@@ -41,7 +40,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 						alt={event.coverImageAlt}
 						width={100}
 						height={100}
-						className='w-full h-auto object-contain group-hover:scale-105 transition-all duration-300 aspect-square'
+						className='w-full h-auto object-cover group-hover:scale-105 transition-all duration-300 aspect-square'
 						priority
 						unoptimized
 					></Image>
@@ -81,7 +80,15 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 						</Button>
 					) : null}
 					<Button asChild className='w-full' variant={'secondary'}>
-						<Link href={`/events/${event.slug}`}>Learn more</Link>
+						<Link
+							href={`/${
+								event.eventType !== 'recruitment'
+									? 'events'
+									: 'recruitments'
+							}/${event.slug}`}
+						>
+							Learn more
+						</Link>
 					</Button>
 				</div>
 			</div>

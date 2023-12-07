@@ -15,7 +15,6 @@ const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'long',
 		timeStyle: 'long',
-		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 const Location: React.FC<LocationProps> = ({ event }) => {

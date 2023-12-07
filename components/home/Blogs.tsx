@@ -1,12 +1,34 @@
 /**
- * Blogs Component - Home Page
+ * Blogs Section - Home Page
  */
 
-// Dependecies
+// Dependencies
 import React from 'react';
+import BlogPostCard from '../cards/BlogCard';
 
-const Blogs = () => {
-	return <div>Blogs</div>;
+type BlogsProps = React.ComponentProps<'section'> & {
+	posts: BlogPost[];
+};
+
+const Blogs: React.FC<BlogsProps> = ({ posts }) => {
+	return (
+		<section className='h-full w-full flex flex-col items-start justify-center max-w-7xl mx-auto gap-8 p-4 md:p-16'>
+			<div className='text-center mx-auto'>
+				<h2 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold'>
+					Blogs
+				</h2>
+				<p className='text-base md:text-lg lg:text-xl mt-4'>
+					Discover Insights, Gain Knowledge - Explore Our Featured
+					Blogs
+				</p>
+			</div>
+			<ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+				{posts.map((post) => (
+					<BlogPostCard post={post} key={`blog-${post._id}`} />
+				))}
+			</ul>
+		</section>
+	);
 };
 
 export default Blogs;

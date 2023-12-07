@@ -27,6 +27,11 @@ export const teamMemberQuery = groq`*[_type == "team" && slug.current == $slug][
   ..., "slug": slug.current, "image": image.asset->url, "alt": image.alt, "domain": domain->{..., "slug": slug.current, "image": image.asset->url, "alt": image.alt}, "role": role->{..., "slug": slug.current}
 }`;
 
+// Get a single recruitment by its slug
+export const recruitmentQuery = groq`*[_type == "event" && eventType == "recruitment" && slug.current == $slug][0]{
+  ..., "slug": slug.current, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, "imageGallery": imageGallery[]{..., "image": image.asset->url, "alt": image.alt }, "speakers": speakers[]{..., "image": image.asset->url, "alt": image.alt}, (startDate <= now() && endDate >= now()) => {"status": "ongoing"}, (startDate >= now() && endDate >= now()) => {"status": "upcoming"}, (startDate <= now() && endDate <= now()) => {"status": "completed"}
+}`;
+
 // Get all post slugs
 export const postPathsQuery = groq`*[_type == "post" && defined(slug.current)][]{
   "params": { "slug": slug.current }
@@ -66,12 +71,12 @@ export const partnersQuery = groq`*[_type == "partner"]{
 export const activeNotificationsQuery = groq`*[_type == "notification" && startDate <= now() && endDate >= now()]{ ... }`;
 
 // Get latest recruitment event
-export const latestRecruitmentEventQuery = groq`*[_type == "event" && eventType == "recruitment" && startDate <= now() && endDate >= now()]{
+export const latestRecruitmentEventQuery = groq`*[_type == "event" && eventType == "recruitment" && startDate >= now() && endDate >= now()]{
   ..., "slug": slug.current, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, (startDate <= now() && endDate >= now()) => {"status": "ongoing"}, (startDate >= now() && endDate >= now()) => {"status": "upcoming"}, (startDate <= now() && endDate <= now()) => {"status": "completed"}
 } | order(startDate asc) [0]`;
 
 // Get all completed recruitments
-export const pastRecruitmentEventsQuery = groq`*[_type == "event" && eventType == "recruitment" && startDate >= now() && endDate >= now()]{
+export const pastRecruitmentEventsQuery = groq`*[_type == "event" && eventType == "recruitment" && startDate <= now() && endDate <= now()]{
   ..., "slug": slug.current, "coverImage": coverImage.asset->url, "coverImageAlt": coverImage.alt, (startDate <= now() && endDate >= now()) => {"status": "ongoing"}, (startDate >= now() && endDate >= now()) => {"status": "upcoming"}, (startDate <= now() && endDate <= now()) => {"status": "completed"}
 } | order(endDate desc)`;
 

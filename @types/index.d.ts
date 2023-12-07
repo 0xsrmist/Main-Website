@@ -82,7 +82,7 @@ type EventData = Readonly<{
 	slug: string;
 	about: string;
 	description?: TypedObject | TypedObject[];
-	eventType: 'recrruitment' | 'conference' | 'hackathon' | 'meetup';
+	eventType: 'recruitment' | 'conference' | 'hackathon' | 'meetup';
 	mode: 'online' | 'offline';
 	url: string;
 	startDate: Date;

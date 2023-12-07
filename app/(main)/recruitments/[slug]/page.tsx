@@ -1,5 +1,5 @@
 /**
- * Individual Events Page
+ * Individual Recruitments Page
  */
 
 // Dependencies
@@ -12,7 +12,7 @@ import Header from '@/components/events/Header';
 import Location from '@/components/events/Location';
 import RegisterButton from '@/components/events/RegisterButton';
 import { client } from '@/sanity/lib/client';
-import { eventPathsQuery, eventQeury } from '@/sanity/lib/queries';
+import { recruitmentPathsQuery, recruitmentQuery } from '@/sanity/lib/queries';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
 import EventDescription from '@/components/events/Description';
 
@@ -22,7 +22,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-	const events = await client.fetch(eventPathsQuery);
+	const events = await client.fetch(recruitmentPathsQuery);
 	return events;
 }
 
@@ -30,31 +30,31 @@ export async function generateMetadata(
 	{ params, searchParams }: Props,
 	parent: ResolvingMetadata
 ): Promise<Metadata> {
-	const event = await client.fetch<EventData>(eventQeury, params);
+	const recruitment = await client.fetch<EventData>(recruitmentQuery, params);
 	return {
 		metadataBase: new URL(TPH_WEBSITE_URL),
-		title: `${event.title} | TPH x SRMIST`,
-		description: event.about,
+		title: `${recruitment.title} | TPH x SRMIST`,
+		description: recruitment.about,
 		openGraph: {
-			...(event.coverImage && { images: [event.coverImage] }),
+			...(recruitment.coverImage && { images: [recruitment.coverImage] }),
 			type: 'website',
-			title: `${event.title} | TPH x SRMIST`,
-			description: event.about,
-			url: `${TPH_WEBSITE_URL}/events/${event.slug}`,
+			title: `${recruitment.title} | TPH x SRMIST`,
+			description: recruitment.about,
+			url: `${TPH_WEBSITE_URL}/events/${recruitment.slug}`,
 		},
 		twitter: {
-			...(event.coverImage && { images: [event.coverImage] }),
+			...(recruitment.coverImage && { images: [recruitment.coverImage] }),
 			card: 'summary_large_image',
-			title: `${event.title} | TPH x SRMIST`,
-			description: event.about,
+			title: `${recruitment.title} | TPH x SRMIST`,
+			description: recruitment.about,
 		},
 	};
 }
 
-const Event = async ({ params }: Props) => {
-	const event = await client.fetch<EventData>(eventQeury, params);
-	if (!event) {
-		redirect('/events');
+const Recruitment = async ({ params }: Props) => {
+	const recruitment = await client.fetch<EventData>(recruitmentQuery, params);
+	if (!recruitment) {
+		redirect('/recruitments');
 	}
 	return (
 		<main className='w-full'>
@@ -62,29 +62,29 @@ const Event = async ({ params }: Props) => {
 				<section className='h-fit md:sticky md:top-32'>
 					<div className='w-full overflow-hidden rounded-2xl'>
 						<Image
-							src={event.coverImage}
+							src={recruitment.coverImage}
 							width={100}
 							height={100}
-							alt={event.coverImageAlt}
+							alt={recruitment.coverImageAlt}
 							className='w-full h-auto object-contain'
 							unoptimized
 						/>
 					</div>
-					{event.status !== 'completed' ? (
-						<RegisterButton url={event.url} />
+					{recruitment.status !== 'completed' ? (
+						<RegisterButton url={recruitment.url} />
 					) : null}
 				</section>
 				<section>
-					<Header event={event} />
-					{event.status !== 'completed' ? (
-						<RegisterButton url={event.url} />
+					<Header event={recruitment} />
+					{recruitment.status !== 'completed' ? (
+						<RegisterButton url={recruitment.url} />
 					) : null}
-					<Location event={event} />
-					{event.description ? (
-						<EventDescription event={event} />
+					<Location event={recruitment} />
+					{recruitment.description ? (
+						<EventDescription event={recruitment} />
 					) : null}
-					{event.speakers && event.speakers.length > 0 ? (
-						<Speakers speakers={event.speakers} />
+					{recruitment.speakers && recruitment.speakers.length > 0 ? (
+						<Speakers speakers={recruitment.speakers} />
 					) : null}
 				</section>
 			</div>
@@ -92,4 +92,4 @@ const Event = async ({ params }: Props) => {
 	);
 };
 
-export default Event;
+export default Recruitment;

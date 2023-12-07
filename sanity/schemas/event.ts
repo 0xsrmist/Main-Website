@@ -27,9 +27,10 @@ export default defineType({
 		defineField({
 			name: 'about',
 			title: 'About',
-			description: 'A short information or catchphrase about the event.',
+			description:
+				'A short information or catchphrase about the event. (Max. 500 characters)',
 			type: 'string',
-			validation: (Rule) => Rule.required().min(5).max(1500),
+			validation: (Rule) => Rule.required().min(5).max(500),
 		}),
 		defineField({
 			name: 'description',
@@ -99,7 +100,7 @@ export default defineType({
 			name: 'coverImage',
 			title: 'Event Cover Image',
 			description:
-				'An image representing the event, displayed as a cover. This image enhances the visual appeal of the event.',
+				'An image representing the event, displayed as a cover. This image enhances the visual appeal of the event. (Aspect ratio of 1:1 is most preferred!)',
 			type: 'image',
 			validation: (Rule) => Rule.required(),
 			options: {

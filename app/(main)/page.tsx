@@ -9,10 +9,12 @@ import Partners from '@/components/home/Partners';
 import About from '@/components/home/About';
 import Domains from '@/components/home/Domains';
 import Recruitment from '@/components/resuable/Recruitment';
+import Blogs from '@/components/home/Blogs';
 
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import {
 	domainsQuery,
+	featuredPostsQuery,
 	latestEventsQuery,
 	latestRecruitmentEventQuery,
 	partnersQuery,
@@ -28,6 +30,7 @@ const Home = async () => {
 	const recruitment = await sanityFetch<EventData>({
 		query: latestRecruitmentEventQuery,
 	});
+	const posts = await sanityFetch<BlogPost[]>({ query: featuredPostsQuery });
 
 	return (
 		<main>
@@ -37,6 +40,7 @@ const Home = async () => {
 			<Domains domains={domains} />
 			{events.length > 0 ? <Events events={events} /> : null}
 			{recruitment ? <Recruitment recruitment={recruitment} /> : null}
+			{posts.length > 0 ? <Blogs posts={posts} /> : null}
 		</main>
 	);
 };
