@@ -9,6 +9,8 @@ import { postPathsQuery, postQuery } from '@/sanity/lib/queries';
 import { Metadata, ResolvingMetadata } from 'next';
 import { redirect } from 'next/navigation';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
+import BlogHeader from '@/components/blogs/Header';
+import BlogBody from '@/components/blogs/Body';
 
 type Props = {
 	params: { slug: string };
@@ -46,11 +48,15 @@ export async function generateMetadata(
 
 const Blog = async ({ params }: Props) => {
 	const post = await client.fetch<BlogPost>(postQuery, params);
-	console.log(post);
 	if (!post) {
 		redirect('/blogs');
 	}
-	return <main>Blog</main>;
+	return (
+		<main>
+			<BlogHeader post={post} />
+			<BlogBody post={post} />
+		</main>
+	);
 };
 
 export default Blog;
