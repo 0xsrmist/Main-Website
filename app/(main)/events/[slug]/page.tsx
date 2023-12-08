@@ -15,6 +15,7 @@ import { client } from '@/sanity/lib/client';
 import { eventPathsQuery, eventQeury } from '@/sanity/lib/queries';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
 import EventDescription from '@/components/events/Description';
+import Gallery from '@/components/events/Gallery';
 
 type Props = {
 	params: { slug: string };
@@ -85,6 +86,9 @@ const Event = async ({ params }: Props) => {
 					) : null}
 					{event.speakers && event.speakers.length > 0 ? (
 						<Speakers speakers={event.speakers} />
+					) : null}
+					{event.imageGallery && event.imageGallery.length > 0 ? (
+						<Gallery gallery={event.imageGallery!} />
 					) : null}
 				</section>
 			</div>
