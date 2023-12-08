@@ -154,7 +154,10 @@ const TeamMember = async ({ params }: Props) => {
 					</h1>
 					{member.role.name !== 'Co-founder' ? (
 						<h2 className='text-base md:text-lg lg:text-xl'>
-							{member.role.name} • {member.domain.name} domain
+							{member.currentlyWorking
+								? member.role.name
+								: `Former ${member.role.name}`}{' '}
+							• {member.domain.name} domain
 						</h2>
 					) : (
 						<h2 className='text-base md:text-lg lg:text-xl'>
@@ -187,7 +190,14 @@ const TeamMember = async ({ params }: Props) => {
 					</ul>
 					{member.startDate ? (
 						<p className='text-sm mt-4'>
-							Member since: {dateFormatter(member.startDate)}
+							<span>
+								Member since: {dateFormatter(member.startDate)}{' '}
+							</span>
+							{!member.currentlyWorking && member.endDate ? (
+								<span>
+									till: {dateFormatter(member.endDate)}
+								</span>
+							) : null}
 						</p>
 					) : null}
 				</section>

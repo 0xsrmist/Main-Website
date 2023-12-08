@@ -22,6 +22,7 @@ import {
 
 import './styles.css';
 import Events from '@/components/home/Events';
+import NoRecruitment from '@/components/resuable/NoRecruitment';
 
 const Home = async () => {
 	const domains = await sanityFetch<Domain[]>({ query: domainsQuery });
@@ -39,7 +40,11 @@ const Home = async () => {
 			<About />
 			<Domains domains={domains} />
 			{events.length > 0 ? <Events events={events} /> : null}
-			{recruitment ? <Recruitment recruitment={recruitment} /> : null}
+			{recruitment ? (
+				<Recruitment recruitment={recruitment} />
+			) : (
+				<NoRecruitment />
+			)}
 			{posts.length > 0 ? <Blogs posts={posts} /> : null}
 		</main>
 	);

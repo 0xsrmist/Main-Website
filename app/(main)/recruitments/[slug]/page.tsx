@@ -15,6 +15,7 @@ import { client } from '@/sanity/lib/client';
 import { recruitmentPathsQuery, recruitmentQuery } from '@/sanity/lib/queries';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
 import EventDescription from '@/components/events/Description';
+import Gallery from '@/components/events/Gallery';
 
 type Props = {
 	params: { slug: string };
@@ -85,6 +86,10 @@ const Recruitment = async ({ params }: Props) => {
 					) : null}
 					{recruitment.speakers && recruitment.speakers.length > 0 ? (
 						<Speakers speakers={recruitment.speakers} />
+					) : null}
+					{recruitment.imageGallery &&
+					recruitment.imageGallery.length > 0 ? (
+						<Gallery gallery={recruitment.imageGallery!} />
 					) : null}
 				</section>
 			</div>
