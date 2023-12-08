@@ -57,6 +57,11 @@ export const teamMembersQuery = groq`*[_type == "team" && currentlyWorking == tr
   ..., "slug": slug.current, "image": image.asset->url, "alt": image.alt, "domain": domain->{..., "slug": slug.current}, "role": role->{..., "slug": slug.current}
 } | order(role->order desc)`;
 
+// Get all team alumni
+export const teamAlumnisQuery = groq`*[_type == "team" && currentlyWorking == false]{
+  ..., "slug": slug.current, "image": image.asset->url, "alt": image.alt, "domain": domain->{..., "slug": slug.current}, "role": role->{..., "slug": slug.current}
+} | order(role->order desc)`;
+
 // Get all domains
 export const domainsQuery = groq`*[_type == "domain"]{
   ..., "slug": slug.current, "image": image.asset->url, "alt": image.alt

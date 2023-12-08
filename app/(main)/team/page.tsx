@@ -11,7 +11,8 @@ import CoFounders from '@/components/team/CoFounders';
 import Presidents from '@/components/team/Presidents';
 
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
-import { teamMembersQuery } from '@/sanity/lib/queries';
+import { teamAlumnisQuery, teamMembersQuery } from '@/sanity/lib/queries';
+import Alumni from '@/components/team/Alumni';
 
 async function sortTeamMembersByRole(members: TeamMember[]) {
 	const FILTERED_TEAM_MEMBERS: Record<CLUB_ROLES, TeamMember[]> = {
@@ -61,6 +62,9 @@ const Team = async () => {
 	const teamMembers = await sanityFetch<TeamMember[]>({
 		query: teamMembersQuery,
 	});
+	const alumnis = await sanityFetch<TeamMember[]>({
+		query: teamAlumnisQuery,
+	});
 	const membersByRole = await sortTeamMembersByRole(teamMembers);
 	const membersByDomain = await sortTeamMembersByDomain(membersByRole);
 
@@ -101,6 +105,7 @@ const Team = async () => {
 					</TabsContent>
 				))}
 			</Tabs>
+			{alumnis.length > 0 ? <Alumni members={alumnis} /> : null}
 		</main>
 	);
 };

@@ -38,8 +38,19 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
 			<div className='mt-4 bg-slate-800 px-4 py-2 rounded-2xl w-[32ch]'>
 				<h3 className='font-medium'>{member.name}</h3>
 				<p className='text-sm'>
-					<span className='text-app-primary font-medium'>
-						{member.domain.name}
+					<span className='font-medium'>
+						{member.currentlyWorking ? (
+							<span className='text-app-primary'>
+								{member.domain.name}
+							</span>
+						) : (
+							<span>
+								Former <b>{member.role.name}</b>{' '}
+								<span className='text-app-primary'>
+									({member.domain.name})
+								</span>
+							</span>
+						)}
 					</span>{' '}
 					• {member.qualifications}
 				</p>
