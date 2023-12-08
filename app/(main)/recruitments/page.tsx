@@ -12,6 +12,7 @@ import {
 import EventsList from '@/components/events/List';
 import Hero from '@/components/events/RecruitmentHero';
 import Recruitment from '@/components/resuable/Recruitment';
+import NoRecruitment from '@/components/resuable/NoRecruitment';
 
 const Recruitments = async () => {
 	const latestRecruitment = await sanityFetch<EventData>({
@@ -25,7 +26,9 @@ const Recruitments = async () => {
 			<Hero />
 			{latestRecruitment ? (
 				<Recruitment recruitment={latestRecruitment} />
-			) : null}
+			) : (
+				<NoRecruitment />
+			)}
 			<section className='max-w-7xl mx-auto' id='recruitments'>
 				<h2 className='uppercase text-xl md:text-2xl lg:text-4xl leading-tight font-bold text-center'>
 					Past Recruitments
