@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 import z from 'zod';
 import { Button } from '@/components/ui/button';
-import { TPH_WEBSITE_URL } from '@/constants/tph';
+import { TPH_WEBSITE_URL, TPH_MAIN_WEBSITE_GITHUB_REPO } from '@/constants/tph';
 
 type Props = {
 	params: { slug: string };
@@ -200,6 +200,21 @@ const TeamMember = async ({ params }: Props) => {
 							) : null}
 						</p>
 					) : null}
+				</section>
+				<section className='mt-4'>
+					<p className='max-w-md mx-auto text-sm text-center'>
+						If you notice any incorrect information or need to
+						update details for {member.name}&apos;s profile please{' '}
+						<Link
+							target='_blank'
+							href={`${TPH_MAIN_WEBSITE_GITHUB_REPO}issues/new?title=Incorrect%2FUpdate%20Information%20Required%20for%20\`${member.name}\`&body=%23%23%20What%20is%20the%20issue%20about%3F%0A%0A${member.name}%27s%20information%20is%20incorrect%2Fneeds%20to%20be%20updated...%0A%0A%23%23%20What%20Information%20needs%20to%20be%20updated%20or%20corrected%3f%0A%0A%0A%23%23%20Internal%20Usage%20%5BDO%20NOT%20DELETE%5D%0A%0A-%20Profile%20Slug%3A%20\`${member.slug}\``}
+							className='underline underline-offset-2 font-medium hover:text-app-primary transition-all'
+						>
+							create a new issue{' '}
+						</Link>
+						on our GitHub repository. We appreciate your help in
+						keeping our team information accurate!
+					</p>
 				</section>
 			</div>
 			<div className='absolute w-full -left-8 md:left-0 top-0 max-w-[12rem] md:max-w-sm -z-10'>

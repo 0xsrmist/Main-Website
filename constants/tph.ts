@@ -44,7 +44,7 @@ export const TPH_SOCIALS: SocialsList = [
 ];
 
 export const TPH_MAIN_WEBSITE_GITHUB_REPO =
-	'https://github.com/0xsrmist/Main-Website/';
+	'https://github.com/0xsrmist/Main-Website/' as const;
 
 export const TPH_TERMS_AND_CONDITIONS: TermsAndConditionsData = [
 	{
