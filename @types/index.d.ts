@@ -98,8 +98,10 @@ type EventData = Readonly<{
 		alt: string;
 		role: string;
 		url?: string;
+		_id: string;
 	}>;
 	imageGallery?: Array<{
+		_id: string;
 		caption: string;
 		image: string;
 		alt: string;
