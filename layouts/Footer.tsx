@@ -54,7 +54,7 @@ const Footer = () => {
 				<div className='flex gap-8 flex-col md:flex-row'>
 					<div>
 						<p className='text-xl font-medium'>Explore</p>
-						<ul className='grid grid-cols-2 gap-4 mt-4 place-items-start'>
+						<ul className='grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4 place-items-start'>
 							{FOOTER_NAVIGATION.map((item) => (
 								<li key={`footer-nav-${item.url}`}>
 									<Link
