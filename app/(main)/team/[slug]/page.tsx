@@ -138,13 +138,13 @@ const TeamMember = async ({ params }: Props) => {
 	return (
 		<main className='w-full p-4 md:p-16 relative overflow-hidden min-h-screen z-20'>
 			<div className='max-w-7xl mx-auto mt-20 gap-8 flex items-center jusitfy-center flex-col z-20'>
-				<section className='max-w-[12rem] md:max-w-xs rounded-2xl overflow-hidden'>
+				<section className='max-w-[12rem] max-h-[12rem] w-full h-full md:max-h-[20rem] md:max-w-xs rounded-2xl overflow-hidden'>
 					<Image
 						src={member.image}
 						width={100}
 						height={100}
 						alt={member.alt}
-						className='w-full h-auto object-contain aspect-square'
+						className='w-full h-auto object-cover aspect-square'
 						unoptimized
 					/>
 				</section>
