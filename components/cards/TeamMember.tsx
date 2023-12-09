@@ -21,7 +21,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
 						alt={member.alt}
 						width={100}
 						height={100}
-						className='w-full h-auto object-contain aspect-square'
+						className='w-full h-auto object-cover aspect-square'
 						unoptimized
 					/>
 					<div className='w-full h-1/2 text-center object-contain aspect-square absolute top-full group-hover:top-1/2 trandition-all duration-300 left-0 bg-black/90 flex items-center justify-center'>
