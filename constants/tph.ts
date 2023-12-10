@@ -28,7 +28,7 @@ export const TPH_SOCIALS: SocialsList = [
 	},
 	{
 		name: 'LinkedIn',
-		url: 'https://www.instagram.com/0xsrmist/',
+		url: 'https://www.linkedin.com/company/tph-srmist',
 		Icon: Linkedin,
 	},
 	{
