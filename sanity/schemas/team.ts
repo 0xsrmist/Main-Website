@@ -179,13 +179,18 @@ export default defineType({
 			title: 'name',
 			media: 'image',
 			role: 'role.name',
+			domain: 'domain.name',
 		},
 		prepare(selection) {
-			const { title, media, role } = selection;
+			const { title, media, role, domain } = selection;
 			return {
 				title: title ?? 'unknown',
 				media: media,
-				subtitle: role ?? 'unknown role',
+				subtitle: role
+					? domain
+						? `${role} • ${domain}`
+						: `${role}`
+					: '',
 			};
 		},
 	},
