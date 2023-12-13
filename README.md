@@ -94,7 +94,3 @@ So, feel free to fork this repo. If you do, please just give us proper credit by
 - App-Router for efficient routing.
 
 Feel free to explore and contribute to make this website a vibrant space for our community!
-
----
-
-**TPHxSRMIST - Innovate. Collaborate. Thrive.**
