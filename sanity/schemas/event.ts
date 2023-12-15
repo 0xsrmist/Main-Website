@@ -46,7 +46,13 @@ export default defineType({
 				'Select the type of the event. To add more types, contact the tech team.',
 			type: 'string',
 			options: {
-				list: ['recruitment', 'conference', 'hackathon', 'meetup'],
+				list: [
+					'recruitment',
+					'conference',
+					'hackathon',
+					'meetup',
+					'workshop',
+				],
 			},
 			validation: (Rule) => Rule.required(),
 		}),
