@@ -147,7 +147,6 @@ export default defineType({
 							options: {
 								hotspot: true,
 							},
-							validation: (Rule) => Rule.required(),
 							fields: [
 								{
 									name: 'alt',

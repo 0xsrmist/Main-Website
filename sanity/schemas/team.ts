@@ -46,7 +46,6 @@ export default defineType({
 			type: 'image',
 			description:
 				'An image representing the team member. This could be a profile picture or a photo.',
-			validation: (Rule) => Rule.required(),
 			options: {
 				hotspot: true,
 			},

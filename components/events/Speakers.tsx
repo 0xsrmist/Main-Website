@@ -29,7 +29,12 @@ const Speakers: React.FC<SpeakersProps> = ({ speakers }) => {
 						>
 							<div className='w-full max-w-[8rem] rounded-2xl overflow-hidden'>
 								<Image
-									src={speaker.image}
+									src={
+										speaker.image ??
+										`https://api.dicebear.com/7.x/thumbs/svg?seed=${speaker.name
+											.replace(/\s+/gi, '-')
+											.toLowerCase()}`
+									}
 									alt={speaker.alt}
 									width={100}
 									height={100}

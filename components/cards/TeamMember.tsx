@@ -17,7 +17,12 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
 			<div className='relative z-20 max-w-[12rem] w-full mx-auto group'>
 				<div className='rounded-full relative overflow-hidden max-w-[12rem] w-full z-10 shadow-md shadow-black'>
 					<Image
-						src={member.image}
+						src={
+							member.image ??
+							`https://api.dicebear.com/7.x/thumbs/svg?seed=${member.name
+								.replace(/\s+/gi, '-')
+								.toLowerCase()}`
+						}
 						alt={member.alt}
 						width={100}
 						height={100}

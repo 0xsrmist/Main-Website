@@ -140,7 +140,12 @@ const TeamMember = async ({ params }: Props) => {
 			<div className='max-w-7xl mx-auto mt-20 gap-8 flex items-center jusitfy-center flex-col z-20'>
 				<section className='max-w-[12rem] max-h-[12rem] w-full h-full md:max-h-[20rem] md:max-w-xs rounded-2xl overflow-hidden'>
 					<Image
-						src={member.image}
+						src={
+							member.image ??
+							`https://api.dicebear.com/7.x/thumbs/svg?seed=${member.name
+								.replace(/\s+/gi, '-')
+								.toLowerCase()}`
+						}
 						width={100}
 						height={100}
 						alt={member.alt}
