@@ -76,6 +76,7 @@ const CardHeader: React.FC<BlogSubComponentProps['CardHeaderProps']> = ({
 				<p>
 					{new Intl.DateTimeFormat('en-US', {
 						dateStyle: 'medium',
+						timeZone: 'Asia/Kolkata',
 					}).format(new Date(publishedAt))}
 				</p>
 				<p className='text-xs text-right'>Published</p>

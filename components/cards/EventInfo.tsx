@@ -13,6 +13,7 @@ const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'short',
 		timeStyle: 'short',
+		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 type EventInfoProps = React.ComponentProps<'li'> & {
@@ -26,7 +27,7 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 		event.about.slice(0, MAX_ABOUT_LENGTH) +
 		(event.about.length > MAX_ABOUT_LENGTH ? '...' : '');
 	return (
-		<li className='w-full overflow-hidden rounded-lg group z-20 block p-4'>
+		<li className='w-full overflow-hidden rounded-lg group z-20 flex flex-col min-h-full'>
 			<div className='relative'>
 				<span className='text-xs md:text-sm capitalize absolute bottom-4 left-4 bg-white text-app-primary border border-slate-300 px-4 py-2 rounded-xl font-medium z-20'>
 					{event.status}
@@ -46,11 +47,11 @@ const EventInfo: React.FC<EventInfoProps> = ({ event }) => {
 					></Image>
 				</div>
 			</div>
-			<div className='flex flex-col items-center justify-center p-4 text-center bg-app-secondary/20 rounded-bl-lg rounded-br-lg'>
+			<div className='flex flex-col items-center justify-center p-4 text-center bg-app-secondary/20 rounded-bl-lg rounded-br-lg h-full'>
 				<h3 className='text-base md:text-lg lg:text-xl mt-2 font-medium'>
 					{event.title}
 				</h3>
-				<p className='text-justify'>{about}</p>
+				<p className='text-justify mt-auto'>{about}</p>
 				<div className='flex gap-2 text-left mt-4 w-full'>
 					<Calendar size={20} strokeWidth={1.5} />
 					<p>

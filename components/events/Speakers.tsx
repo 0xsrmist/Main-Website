@@ -27,7 +27,7 @@ const Speakers: React.FC<SpeakersProps> = ({ speakers }) => {
 							href={speaker.url || '#'}
 							className='w-full h-full p-4 flex flex-col items-center justify-center'
 						>
-							<div className='w-full max-w-[8rem] rounded-2xl overflow-hidden'>
+							<div className='w-full max-w-[8rem] rounded-2xl overflow-hidden mb-1'>
 								<Image
 									src={
 										speaker.image ??
@@ -45,7 +45,7 @@ const Speakers: React.FC<SpeakersProps> = ({ speakers }) => {
 							<h4 className='capitalize text-sm md:text-base font-medium mt-auto'>
 								{speaker.name}
 							</h4>
-							<p className='text-xs md:text-sm capitalize bg-white text-app-primary border border-slate-300 px-2 py-1 rounded-xl mt-1'>
+							<p className='text-xs font-bold capitalize bg-white text-app-primary border border-slate-300 px-2 py-1 rounded-xl mt-1'>
 								{speaker.role}
 							</p>
 						</Link>

@@ -10,7 +10,7 @@ import { Button } from '@/components/ui/button';
 
 const Hero = () => {
 	return (
-		<section className='w-full relative z-20 overflow-hidden p-4 md:p-16'>
+		<section className='w-full relative z-20 overflow-hidden p-4 md:px-16 md:pt-16 md:pb-0'>
 			<div className='grid grid-cols-1 gap-20 z-20 md:grid-cols-2 w-full max-w-7xl mx-auto mt-20'>
 				<section>
 					<h1 className='uppercase text-4xl md:text-5xl lg:text-6xl leading-tight font-bold mt-4'>

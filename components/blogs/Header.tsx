@@ -52,6 +52,7 @@ const BlogHeader: React.FC<HeaderProps> = ({ post }) => {
 				<p>
 					{new Intl.DateTimeFormat('en-US', {
 						dateStyle: 'medium',
+						timeZone: 'Asia/Kolkata',
 					}).format(new Date(post.publishedAt))}
 				</p>
 				<div>•</div>
