@@ -1,7 +1,15 @@
 // Club Constants
 
 // Dependencies
-import { Linkedin, Instagram, LucideIcon, X, Mail, Github, Discord } from 'lucide-react';
+import {
+	Linkedin,
+	Instagram,
+	LucideIcon,
+	X,
+	Mail,
+	Github,
+	Gamepad2,
+} from 'lucide-react';
 
 type SocialsList = ReadonlyArray<{
 	name: string;
@@ -44,7 +52,7 @@ export const TPH_SOCIALS: SocialsList = [
 	{
 		name: 'Discord',
 		url: 'https://discord.gg/XgSgEBhmC8',
-		Icon: Discord,
+		Icon: Gamepad2,
 	},
 ];
 
