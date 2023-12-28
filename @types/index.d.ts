@@ -50,6 +50,7 @@ type BlogPost = Readonly<{
 	description: string;
 	slug: string;
 	author: TeamMember;
+	canonicalLink?: string;
 	image?: string;
 	alt?: string;
 	categories?: Category[];

@@ -43,6 +43,13 @@ export default defineType({
 			to: { type: 'team' },
 		}),
 		defineField({
+			name: 'canonicalLink',
+			title: 'Canonical Link',
+			type: 'url',
+			description:
+				'If the blog post has another source and is being republished here, add the original source to the blog post here as a link to it.',
+		}),
+		defineField({
 			name: 'mainImage',
 			title: 'Main image',
 			description:
