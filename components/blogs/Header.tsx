@@ -35,19 +35,24 @@ const BlogHeader: React.FC<HeaderProps> = ({ post }) => {
 			</h2>
 			<section className='flex items-center justify-center flex-wrap gap-4 mt-4 text-center text-lg font-medium'>
 				{post.author ? (
-					<div className='flex items-center gap-2'>
+					<Link
+						href={post.author.slug}
+						className='flex items-center gap-2 group'
+					>
 						<div className='rounded-full overflow-hidden w-14 h-14'>
 							<Image
 								src={post.author.image}
 								alt={post.author.alt || ''}
 								width={100}
 								height={100}
-								className='w-full h-auto object-cover'
+								className='w-full h-auto object-cover group-hover:scale-105 transition-all'
 								unoptimized
 							/>
 						</div>
-						<p>{post.author.name}</p>
-					</div>
+						<span className='group-hover:underline underline-offset-2'>
+							{post.author.name}
+						</span>
+					</Link>
 				) : null}
 				<div>•</div>
 				<p>
