@@ -4,6 +4,7 @@
 
 // Dependencies
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import ReadTime from './ReadTime';
 
@@ -58,6 +59,20 @@ const BlogHeader: React.FC<HeaderProps> = ({ post }) => {
 				<div>•</div>
 				<ReadTime body={post.body} />
 			</section>
+			{post?.canonicalLink ? (
+				<section className='text-sm max-w-[40ch] mx-auto'>
+					Originally posted at
+					<br />
+					<Link
+						href={post.canonicalLink}
+						className='underline underline-offset-2'
+						target='_blank'
+					>
+						{post.canonicalLink}
+					</Link>
+					.
+				</section>
+			) : null}
 		</header>
 	);
 };
