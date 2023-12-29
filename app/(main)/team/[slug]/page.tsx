@@ -60,7 +60,7 @@ export async function generateMetadata(
 		},
 		twitter: {
 			...(member.image && { images: [member.image] }),
-			card: 'summary_large_image',
+			card: 'summary',
 			title: `${member.name} | TPH x SRMIST`,
 			description: member.bio,
 			...(twitterUsername && { creator: `@${twitterUsername}` }),
