@@ -36,6 +36,8 @@ Before you begin, ensure you have the following prerequisites installed on your 
     GMAIL_PASSWORD=""
     ```
 
+    Contact code maintainers to get access to t he sanity project ID and dataset values.
+
 For access to NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET, contact the code maintainers or refer to the [Sanity documentation](https://www.sanity.io/docs).
 
 To obtain GMAIL_EMAIL and GMAIL_PASSWORD, follow [Google's instructions](https://support.google.com/mail/answer/185833?hl=en) on how to set up an app password.
