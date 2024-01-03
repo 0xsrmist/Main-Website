@@ -14,6 +14,8 @@ Before you begin, ensure you have the following prerequisites installed on your 
 
 1. **Clone the repository:**
 
+    If you've forked the repository, make sure that clone the forked repository and the repo mentioned below.
+
     ```bash
     git clone https://github.com/0xsrmist/Main-Website.git
     ```
