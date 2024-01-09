@@ -60,7 +60,7 @@ export async function generateMetadata(
 		},
 		twitter: {
 			...(member.image && { images: [member.image] }),
-			card: 'summary_large_image',
+			card: 'summary',
 			title: `${member.name} | TPH x SRMIST`,
 			description: member.bio,
 			...(twitterUsername && { creator: `@${twitterUsername}` }),
@@ -90,6 +90,7 @@ type UserSocials = z.infer<typeof userSocials>;
 const dateFormatter = (date: Date) =>
 	new Intl.DateTimeFormat('en-IN', {
 		dateStyle: 'medium',
+		timeZone: 'Asia/Kolkata',
 	}).format(new Date(date));
 
 const TeamMember = async ({ params }: Props) => {

@@ -44,6 +44,9 @@ export async function generateMetadata(
 			title: `${post.title} | TPH x SRMIST`,
 			description: post.description,
 		},
+		alternates: {
+			...(post?.canonicalLink && { canonical: post.canonicalLink }),
+		},
 	};
 }
 
