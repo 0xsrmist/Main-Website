@@ -14,7 +14,7 @@ export const featuredPostsQuery = groq`*[_type == "post" && featured == true]{
 
 // Get a single post by its slug
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
-  ..., "slug": slug.current, "image": mainImage.asset->url, "alt": mainImage.alt, body, author->{"image": image.asset->url, "alt": image.alt, name, "slug": slug.current}, categories[]->{title, "slug": slug.current}
+  ..., "slug": slug.current, "image": mainImage.asset->url, "alt": mainImage.alt, body, author->{"image": image.asset->url, "alt": image.alt, name, "slug": slug.current}, categories[]->{..., "slug": slug.current}
 }`;
 
 // Get a single event by its slug
