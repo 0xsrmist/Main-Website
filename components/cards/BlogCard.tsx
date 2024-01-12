@@ -13,24 +13,24 @@ type BlogPostProps = React.ComponentProps<'li'> & {
 
 const BlogPostCard: React.FC<BlogPostProps> = ({ post }) => {
 	return (
-		<li className='group'>
-			<Link href={`/blogs/${post.slug}`} className='flex flex-col'>
-				<div className='w-full overflow-hidden rounded-tl-lg rounded-tr-lg relative z-20'>
+		<li className='group min-h-full'>
+			<Link href={`/blogs/${post.slug}`} className='flex flex-col h-full'>
+				<div className='w-full overflow-hidden rounded-tl-lg h-1/2 rounded-tr-lg relative z-20'>
 					<Image
 						src={post.image || ''}
 						alt={post.alt || ''}
 						width={100}
 						height={100}
-						className='w-full h-auto object-cover aspect-video group-hover:scale-105 transition-all duration-300 z-[5]'
+						className='w-full h-full object-cover aspect-video group-hover:scale-105 transition-all duration-300 z-[5]'
 						unoptimized
 					/>
 					<div className='absolute transition-all duration-300 top-full group-hover:top-0 left-0 flex items-center justify-center text-lg w-full h-full bg-black/40 z-10 text-white'>
 						Read more
 					</div>
 				</div>
-				<div className='flex flex-col p-4 bg-app-secondary/20 rounded-bl-lg rounded-br-lg'>
+				<div className='flex flex-col p-4 bg-app-secondary/20 rounded-bl-lg rounded-br-lg h-1/2'>
 					<CardHeader {...post} />
-					<p className='mt-2 text-justify'>
+					<p className='mt-auto text-justify'>
 						{post.description.slice(0, 120) + '...'}
 					</p>
 					{post.categories ? (

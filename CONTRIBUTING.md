@@ -14,6 +14,8 @@ Before you begin, ensure you have the following prerequisites installed on your 
 
 1. **Clone the repository:**
 
+    If you've forked the repository, make sure that clone the forked repository and the repo mentioned below.
+
     ```bash
     git clone https://github.com/0xsrmist/Main-Website.git
     ```
@@ -35,6 +37,8 @@ Before you begin, ensure you have the following prerequisites installed on your 
     GMAIL_EMAIL=""
     GMAIL_PASSWORD=""
     ```
+
+    Contact code maintainers to get access to the sanity project ID and dataset values.
 
 For access to NEXT_PUBLIC_SANITY_PROJECT_ID and NEXT_PUBLIC_SANITY_DATASET, contact the code maintainers or refer to the [Sanity documentation](https://www.sanity.io/docs).
 

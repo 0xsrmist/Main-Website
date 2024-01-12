@@ -62,7 +62,7 @@ export default defineType({
 			description: 'Select the mode of the event: online or offline.',
 			type: 'string',
 			options: {
-				list: ['online', 'offline'],
+				list: ['online', 'offline', 'hybrid'],
 			},
 			validation: (Rule) => Rule.required(),
 		}),

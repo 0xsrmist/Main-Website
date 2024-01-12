@@ -14,7 +14,7 @@ type HeaderProps = React.ComponentProps<'header'> & {
 
 const BlogHeader: React.FC<HeaderProps> = ({ post }) => {
 	return (
-		<header className='max-w-5xl mx-auto flex flex-col gap-4 h-fit text-center mt-24 p-4 md:p-16'>
+		<header className='max-w-5xl mx-auto flex flex-col gap-4 h-fit text-center mt-24 p-4 md:px-16'>
 			{post.image ? (
 				<div className='rounded-lg overflow-hidden max-w-4xl mx-auto'>
 					<Image
