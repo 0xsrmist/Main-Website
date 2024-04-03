@@ -132,6 +132,7 @@ type CLUB_ROLES =
 	| 'director'
 	| 'head'
 	| 'lead'
-	| 'member';
+	| 'member'
+	| 'board-member';
 
 type CLUB_DOMAINS = 'technical' | 'corporate' | 'creatives';

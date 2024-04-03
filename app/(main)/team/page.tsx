@@ -13,6 +13,7 @@ import Presidents from '@/components/team/Presidents';
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { teamAlumnisQuery, teamMembersQuery } from '@/sanity/lib/queries';
 import Alumni from '@/components/team/Alumni';
+import BoardMember from '@/components/team/BoardMembers';
 
 async function sortTeamMembersByRole(members: TeamMember[]) {
 	const FILTERED_TEAM_MEMBERS: Record<CLUB_ROLES, TeamMember[]> = {
@@ -23,6 +24,7 @@ async function sortTeamMembersByRole(members: TeamMember[]) {
 		director: [],
 		president: [],
 		'vice-president': [],
+		'board-member' : [],
 	};
 	Object.keys(FILTERED_TEAM_MEMBERS).forEach((role) => {
 		members.forEach((member) => {
@@ -77,6 +79,7 @@ const Team = async () => {
 				<Presidents members={membersByRole} />
 			) : null}
 			{/* <Members members={members} /> */}
+			<BoardMember members={membersByRole} />
 			<Tabs
 				defaultValue='technical'
 				className='w-full flex flex-col items-center justify-center mt-4 md:mt-12'
