@@ -25,8 +25,9 @@ export async function generateStaticParams() {
 export async function generateMetadata(
 	{ params, searchParams }: Props,
 	parent: ResolvingMetadata
-): Promise<Metadata> {
+): Promise<Metadata | null> {
 	const post = await client.fetch<BlogPost>(postQuery, params);
+	if (!post) return null;
 	return {
 		metadataBase: new URL(TPH_WEBSITE_URL),
 		title: `${post.title} | TPH x SRMIST`,
