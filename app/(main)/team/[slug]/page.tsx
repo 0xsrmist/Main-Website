@@ -44,8 +44,9 @@ export async function generateStaticParams() {
 export async function generateMetadata(
 	{ params, searchParams }: Props,
 	parent: ResolvingMetadata
-): Promise<Metadata> {
+): Promise<Metadata | null> {
 	const member = await client.fetch<TeamMember>(teamMemberQuery, params);
+	if (!member) return null;
 	const twitterUsername = extractTwitterUsername(member?.twitter || '');
 	return {
 		metadataBase: new URL(TPH_WEBSITE_URL),
