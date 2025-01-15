@@ -7,24 +7,25 @@ import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Hero from '@/components/team/Hero';
 import Members from '@/components/team/Members';
-import CoFounders from '@/components/team/CoFounders';
-import Presidents from '@/components/team/Presidents';
+import ClubFounder from '@/components/team/ClubFounder';
+import ChapterLeads from '@/components/team/ChapterLeads';
 
 import { sanityFetch } from '@/sanity/lib/sanityFetch';
 import { teamAlumnisQuery, teamMembersQuery } from '@/sanity/lib/queries';
 import Alumni from '@/components/team/Alumni';
 import BoardMember from '@/components/team/BoardMembers';
+import VicePresidents from '@/components/team/VicePresidents';
+
 
 async function sortTeamMembersByRole(members: TeamMember[]) {
 	const FILTERED_TEAM_MEMBERS: Record<CLUB_ROLES, TeamMember[]> = {
-		'co-founder': [],
-		head: [],
-		lead: [],
-		member: [],
-		director: [],
-		president: [],
-		'vice-president': [],
+		'club-founder': [],
+		'chapter-leads' : [],
+		'head': [],
+		'lead': [],
+		'member': [],
 		'board-member' : [],
+		'vice-president': [],
 	};
 	Object.keys(FILTERED_TEAM_MEMBERS).forEach((role) => {
 		members.forEach((member) => {
@@ -73,13 +74,14 @@ const Team = async () => {
 	return (
 		<main className='w-full p-4 md:p-16 overflow-hidden'>
 			<Hero />
-			<CoFounders members={membersByRole} />
-			{membersByRole['president'].length !== 0 ||
-			membersByRole['vice-president'].length !== 0 ? (
-				<Presidents members={membersByRole} />
+			<ClubFounder members={membersByRole} />
+			{membersByRole['chapter-leads'].length !== 0 ? (
+				<ChapterLeads members={membersByRole} />
+			) : null}
+			{membersByRole['vice-president'].length !== 0 ? (
+				<VicePresidents members={membersByRole} />
 			) : null}
 			{/* <Members members={members} /> */}
-			<BoardMember members={membersByRole} />
 			<Tabs
 				defaultValue='technical'
 				className='w-full flex flex-col items-center justify-center mt-4 md:mt-12'
@@ -108,6 +110,7 @@ const Team = async () => {
 					</TabsContent>
 				))}
 			</Tabs>
+			<BoardMember members={membersByRole} />
 			{alumnis.length > 0 ? <Alumni members={alumnis} /> : null}
 		</main>
 	);

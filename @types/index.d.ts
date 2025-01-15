@@ -126,10 +126,9 @@ type FAQData = Readonly<{
 }>;
 
 type CLUB_ROLES =
-	| 'co-founder'
-	| 'president'
+	| 'club-founder'
+	| 'chapter-leads'
 	| 'vice-president'
-	| 'director'
 	| 'head'
 	| 'lead'
 	| 'member'
