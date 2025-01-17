@@ -1,4 +1,5 @@
 import { Archivo } from 'next/font/google';
+import { Analytics } from "@vercel/analytics/react"
 import './globals.css';
 import { Metadata } from 'next';
 import { TPH_WEBSITE_URL } from '@/constants/tph';
@@ -33,6 +34,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={`${archivo.className} bg-app-bg text-white`}>
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	);
